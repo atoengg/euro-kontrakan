@@ -8,7 +8,7 @@ export const Navbar = () => {
                 <nav className="container mx-auto py-4 flex justify-between items-center">
                     <div className="flex items-center gap-1">
                         <img src={euroLogo.src} alt="logo" className="w-8 h-8"/>
-                        <h2 className="font-[900] font-patrickHand text-xl text-white">Euro Kontrakan</h2>
+                        <h2 className="font-bold font-poppins text-base text-white">Euro Kontrakan</h2>
                     </div>
                     <div>
                         <ul className="flex items-center gap-6">
