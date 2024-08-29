@@ -1,13 +1,14 @@
 import { Layouts } from "@/components/layouts";
+import { ExploreSection } from "@/components/section/ExploreSection";
 import { HeroSection } from "@/components/section/HeroSection";
-import { Card } from "flowbite-react";
-import Image from "next/image";
+
 
 export default function Home() {
   return (
     <>
       <Layouts>
         <HeroSection/>
+        <ExploreSection/>
       </Layouts>
     </>
   );
