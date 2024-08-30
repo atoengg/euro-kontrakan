@@ -18,3 +18,8 @@ export interface CardAboutUsProps {
   title: string;
   description: string
 }
+
+export interface ButtonIconProps {
+  label: string;
+  icon: React.ReactNode;
+}

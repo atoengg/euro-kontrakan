@@ -1,4 +1,4 @@
-import { Buttons } from "../elements/Buttons"
+import { Buttons } from "../elements/button/Buttons"
 
 export const ExploreSection = () => {
     return (

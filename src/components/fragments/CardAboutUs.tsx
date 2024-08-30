@@ -1,5 +1,5 @@
 import { Card } from "flowbite-react"
-import { Buttons } from "../elements/Buttons"
+import { Buttons } from "../elements/button/Buttons"
 import { CardAboutUsProps } from "@/types"
 
 export const CardAboutUs = ({background, icon, title, description} : CardAboutUsProps) => {
