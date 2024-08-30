@@ -1,6 +1,7 @@
+"use client"
+
 import { ButtonProps } from "@/types"
 import { Button } from "flowbite-react"
-
 
 export const Buttons = ({className, color, size, label}: ButtonProps) => {
     return (

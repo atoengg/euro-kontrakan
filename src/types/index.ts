@@ -11,3 +11,10 @@ export interface ButtonProps {
   label?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
 }
+
+export interface CardAboutUsProps {
+  background: string;
+  icon: string;
+  title: string;
+  description: string
+}
