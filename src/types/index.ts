@@ -23,3 +23,8 @@ export interface ButtonIconProps {
   label: string;
   icon: React.ReactNode;
 }
+
+export interface BorderProps{
+  width: string;
+  nama: string;
+}
