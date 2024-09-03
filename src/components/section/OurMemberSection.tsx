@@ -43,7 +43,7 @@ export const OurMemberSection = () => {
                             <img src={lineHorizontalPendek.src} className="relative top-3 hidden lg:flex" />
                             <img src={lineHorizontalPendek.src} className="relative top-3 hidden lg:flex" />
                             <div className="relative right-[0.1rem]">
-                                <BorderOurMember nama="Reza Arimatul A." width="120px" />
+                                <BorderOurMember nama="Reza Arimatul A." width="150px" />
                             </div>
                         </div>
 
@@ -170,11 +170,11 @@ export const OurMemberSection = () => {
                             data-aos="fade-up"
                             data-aos-duration="1100">
                             <div className="flex-col">
-                                <BorderOurMember nama="Agung Jefrianto" width="120px" />
+                                <BorderOurMember nama="Agung Jefrianto" width="150px" />
                             </div>
 
                             <div className="flex-col">
-                                <BorderOurMember nama="Rivki Maulana Y." width="120px" />
+                                <BorderOurMember nama="Rivki Maulana Y." width="150px" />
                             </div>
                         </div>
                         <div className=" absolute bottom-[15%] lg:bottom-[20%] " data-aos="fade-up" data-aos-duration="1000">
