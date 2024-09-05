@@ -3,10 +3,10 @@
 import { ButtonProps } from "@/types"
 import { Button } from "flowbite-react"
 
-export const Buttons = ({className, color, size, label}: ButtonProps) => {
+export const Buttons = ({className, type, color, size, label}: ButtonProps) => {
     return (
         <>
-            <Button color={color} size={size} pill className={className}>
+            <Button color={color} type={type} size={size} pill className={className}>
                 {label}
             </Button>
         </>
