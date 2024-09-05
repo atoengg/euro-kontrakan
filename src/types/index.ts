@@ -7,6 +7,7 @@ export interface euroLogo {
 
 export interface ButtonProps {
   className?: string;
+  type?: "button" | "reset" | "submit" ;
   color?: "blue" | "gray" | "dark" | "light" | "success" | "failure" | "warning" | "purple";
   label?: string | React.ReactNode;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
