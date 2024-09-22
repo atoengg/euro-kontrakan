@@ -4,9 +4,11 @@ import { useEffect, useState } from "react"
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 import { storage } from "@/app/firebase";
+import { ButtonSpinner } from "../elements/button/ButtonSpinner";
 
 export const UploadImage = ({ onUpload }: { onUpload: (url: string) => void }) => {
     const [imageUpload, setImageUpload] = useState<File | null>(null)
+    const [isLoading, setIsLoading] = useState(false)
     const [imageList, setImageList] = useState<string[]>([])
     const maxUploadSizeInBytes = 10 * 1024 * 1024; // 10MB
     const maxUploadsPerDay = 20;
@@ -64,18 +66,16 @@ export const UploadImage = ({ onUpload }: { onUpload: (url: string) => void }) =
             return;
         }
 
+        setIsLoading(true)
+
         const imageRef = ref(storage, `images/${imageUpload.name}-${uuidv4()}`)
         uploadBytes(imageRef, imageUpload)
             .then((snapshot) => {
                 getDownloadURL(snapshot.ref)
                     .then((url) => {
-                        // setImageList((prev) => [...prev, url]);
-                        // localStorage.setItem("uploadedImagesCount", uploadedImagesCount + "1");
-                        // localStorage.setItem("lastUploadDate", new Date().toISOString());
                         onUpload(url)
-
+                        setIsLoading(false)
                         alert("gambar anda berhasil di upload");
-
                     })
                     .catch((error) => {
                         console.log(error);
@@ -118,7 +118,14 @@ export const UploadImage = ({ onUpload }: { onUpload: (url: string) => void }) =
                     </form>
                 </div>
 
-                <Buttons onClick={uploadImage} className="font-semibold w-full bg-primary-500 duration-200 transition-all ease-in-out hover:bg-primary-600 " type="button" color="success" size="lg" label="Upload" />
+
+                {
+                    isLoading ? (
+                        <ButtonSpinner className="font-semibold w-full bg-primary-500" color="success" size="lg" label="loading" />
+                    ) : (
+                        <Buttons onClick={uploadImage} className="font-semibold w-full bg-primary-500 duration-200 transition-all ease-in-out hover:bg-primary-600 " type="button" color="success" size="lg" label="Upload" />
+                    )
+                }
             </div>
         </>
     )

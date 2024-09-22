@@ -14,6 +14,13 @@ export interface ButtonProps {
   size?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
+export interface ButtonSpinnerProps {
+  className?: string;
+  color?: "blue" | "gray" | "dark" | "light" | "success" | "failure" | "warning" | "purple";
+  label?: string | React.ReactNode;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+}
+
 export interface CardAboutUsProps {
   background: string;
   icon: string;
