@@ -1,9 +1,9 @@
 "use client"
 
-import { ButtonIconProps } from "@/types"
+import { ButtonIconRightProps } from "@/types"
 import { Button } from "flowbite-react"
 
-export const ButtonIconRight = ({label, icon} : ButtonIconProps) => {
+export const ButtonIconRight = ({label, icon} : ButtonIconRightProps) => {
     return (
         <>
             <div className="flex flex-wrap gap-2">

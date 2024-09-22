@@ -7,6 +7,7 @@ export interface euroLogo {
 
 export interface ButtonProps {
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
   type?: "button" | "reset" | "submit" ;
   color?: "blue" | "gray" | "dark" | "light" | "success" | "failure" | "warning" | "purple";
   label?: string | React.ReactNode;
@@ -21,6 +22,11 @@ export interface CardAboutUsProps {
 }
 
 export interface ButtonIconProps {
+  label: string;
+  icon: React.ReactNode;
+  onUpload: (url: string) => void
+}
+export interface ButtonIconRightProps {
   label: string;
   icon: React.ReactNode;
 }
