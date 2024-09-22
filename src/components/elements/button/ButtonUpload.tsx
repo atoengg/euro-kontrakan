@@ -5,8 +5,8 @@ import { ButtonIconProps } from "@/types"
 import { Button, Modal } from "flowbite-react"
 import { useState } from "react"
 
-export const ButtonUpload = ({ icon, label }: ButtonIconProps) => {
-    const [openModal, setOpenModal] = useState(true)
+export const ButtonUpload = ({ icon, label, onUpload }: ButtonIconProps) => {
+    const [openModal, setOpenModal] = useState(false)
     
     return (
         <>
@@ -19,7 +19,7 @@ export const ButtonUpload = ({ icon, label }: ButtonIconProps) => {
                 <Modal show={openModal} onClose={() => setOpenModal(false)}>
                 <Modal.Header className="border-none"></Modal.Header>
                     <Modal.Body>
-                        <UploadImage/>
+                        <UploadImage onUpload={onUpload}/>
                     </Modal.Body>
                 </Modal>
             </div>
