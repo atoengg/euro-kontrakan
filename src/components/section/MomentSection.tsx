@@ -21,7 +21,7 @@ export const MomentSection = () => {
                     <h2 className="font-semibold text-4xl font-poppins">Euro Kontrakan momen</h2>
                 </div>
                 <div className="">
-                    <CarouselMoment image={images}/>
+                    <CarouselMoment/>
                 </div>
                 <div className="flex flex-row justify-center gap-4 my-8">
                     <ButtonUpload label="Upload" icon={<BsArrowBarUp className="mr-2 w-5 h-5"/>} onUpload={handleImageUpload}/>
