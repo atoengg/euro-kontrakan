@@ -19,7 +19,7 @@ export const ButtonUpload = ({ icon, label, onUpload }: ButtonIconProps) => {
                 <Modal show={openModal} onClose={() => setOpenModal(false)}>
                 <Modal.Header className="border-none"></Modal.Header>
                     <Modal.Body>
-                        <UploadImage onUpload={onUpload}/>
+                        <UploadImage/>
                     </Modal.Body>
                 </Modal>
             </div>
