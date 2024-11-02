@@ -42,3 +42,7 @@ export interface BorderProps{
   width: string;
   nama: string;
 }
+
+export interface CarouselMomentProps {
+  images: string[];
+}

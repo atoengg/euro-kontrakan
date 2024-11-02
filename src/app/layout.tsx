@@ -3,6 +3,8 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { Layouts } from "@/components/layouts";
 import { Footer } from "@/components/fragments/Footer";
+import "@uploadthing/react/styles.css";
+
 
 
 const poppins = Poppins({

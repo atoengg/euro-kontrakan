@@ -7,7 +7,7 @@ import { useState } from "react"
 
 export const ButtonUpload = ({ icon, label, onUpload }: ButtonIconProps) => {
     const [openModal, setOpenModal] = useState(false)
-    
+
     return (
         <>
             <div className="flex flex-wrap gap-2">
@@ -17,9 +17,12 @@ export const ButtonUpload = ({ icon, label, onUpload }: ButtonIconProps) => {
                 </Button>
 
                 <Modal show={openModal} onClose={() => setOpenModal(false)}>
-                <Modal.Header className="border-none"></Modal.Header>
+                    <Modal.Header className="border-none"></Modal.Header>
                     <Modal.Body>
-                        <UploadImage/>
+                        <UploadImage onUploadComplete={(url) => {
+                            onUpload(url); 
+                            setOpenModal(false); 
+                        }} />
                     </Modal.Body>
                 </Modal>
             </div>

@@ -1,18 +1,27 @@
 "use client"
 
-import { BsArrowBarUp, BsArrowRight } from "react-icons/bs"
-import { ButtonIconRight } from "../elements/button/ButtonIconRight"
-import { ButtonUpload } from "../elements/button/ButtonUpload"
 import { CarouselMoment } from "../fragments/CarouselMoment"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { UploadImage } from "../fragments/UploadImage"
 
-export const MomentSection = () => {  
-    
+export const MomentSection = () => {
+
     const [images, setImages] = useState<string[]>([])
-    
-    const handleImageUpload = (newImage: string) => {
-        setImages((prevImages) => [...prevImages, newImage]);
-    }
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const response = await fetch('api/images');
+                const data = await response.json();
+                const imageUrls = data.map((img: any) => img.url);
+                setImages(imageUrls);
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+        };
+
+        fetchImages();
+    }, []);
 
     return (
         <>
@@ -21,11 +30,10 @@ export const MomentSection = () => {
                     <h2 className="font-semibold text-4xl font-poppins">Euro Kontrakan momen</h2>
                 </div>
                 <div className="">
-                    <CarouselMoment/>
+                    <CarouselMoment images={images} />
                 </div>
                 <div className="flex flex-row justify-center gap-4 my-8">
-                    <ButtonUpload label="Upload" icon={<BsArrowBarUp className="mr-2 w-5 h-5"/>} onUpload={handleImageUpload}/>
-                    <ButtonIconRight label="Lihat semua" icon={<BsArrowRight className="ml-2 w-5 h-5"/>}/>
+                    <UploadImage />
                 </div>
             </section>
         </>
