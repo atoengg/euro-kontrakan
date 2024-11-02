@@ -1,11 +1,12 @@
-"use client"
+"use client";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import Image from "next/image";
+import { noDataImg } from "@/image";
+import { CarouselMomentProps } from "@/types";
 
-
-export const CarouselMoment = () => {
-
-
+export const CarouselMoment = ({ images }: CarouselMomentProps) => {
     const settings = {
         centerMode: true,
         centerPadding: "30px",
@@ -36,30 +37,30 @@ export const CarouselMoment = () => {
                 },
             },
         ],
-    }
+    };
 
     return (
-        <>
-            <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 overflow-hidden">
-                
-            </div>
-            {/* <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 overflow-hidden">
-                <Carousel>
-
-                    {images.length > 0 ? (
-                        <div className="grid grid-cols-3 gap-4 pr-4 rounded-xl">
-                            {images.map((imageUrl, index) => (
-                                <img src={imageUrl} key={index} alt="galeri-img" className="object-cover w-full h-full rounded-xl" />
-                            ))}
+        <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 overflow-hidden">
+            {images.length > 0 ? (
+                <Slider {...settings}>
+                    {images.map((imageUrl, index) => (
+                        <div key={index} className="pr-4 rounded-xl">
+                            <Image
+                                src={imageUrl}
+                                alt={`image-${index}`}
+                                width={500}
+                                height={450}
+                                className="object-cover w-full h-full rounded-xl"
+                            />
                         </div>
-                    ) : (
-                        <div className="flex flex-col items-center justify-center">
-                            <img src={noDataImg.src} alt="" className="w-52 h-52" />
-                            <p className="font-semibold text-lg">Belum ada foto yang di upload</p>
-                        </div>
-                    )}
-                </Carousel>
-            </div> */}
-        </>
-    )
-}
+                    ))}
+                </Slider>
+            ) : (
+                <div className="flex flex-col items-center justify-center">
+                    <img src={noDataImg.src} alt="no-data" className="w-52 h-52" />
+                    <p className="font-semibold text-lg">Belum ada foto yang di upload</p>
+                </div>
+            )}
+        </div>
+    );
+};
