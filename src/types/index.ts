@@ -46,3 +46,8 @@ export interface BorderProps{
 export interface CarouselMomentProps {
   images: string[];
 }
+
+export interface buttonOutlineProps{
+  label?: string;
+  className?: string;
+}

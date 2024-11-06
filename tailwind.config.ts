@@ -23,7 +23,7 @@ const config: Config = {
         "90%": "90%",
       },
       fontFamily: {
-        poppins : ["Poppins","sans-serif"]
+        poppins : ["Poppins","sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -46,7 +46,6 @@ const config: Config = {
       },
       'secondary' :{
         700: '#1d496f',
-        800: '#0F1F30',
         900: '#1d3e5d',
         950: '#0f1f30'
       },

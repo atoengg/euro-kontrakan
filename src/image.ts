@@ -14,6 +14,9 @@ import lineHorizontalPendek from './assets/LineHorizontalPendek.svg'
 import lineVertikal2 from './assets/LineVertikal2.svg'
 import lineVertikal3 from './assets/LineVertikal3.svg'
 import noDataImg from './assets/no-data.jpg'
+import avatar from './assets/avatar.png'
+import handShake from './assets/hand_shake.gif'
+import heroImg from './assets/hero-img.png'
 
 
 export{
@@ -32,5 +35,8 @@ export{
     lineHorizontalPendek,
     lineVertikal2,
     lineVertikal3,
-    noDataImg
+    noDataImg,
+    avatar,
+    handShake,
+    heroImg
 }
