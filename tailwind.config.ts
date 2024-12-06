@@ -30,6 +30,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        "shadowCard" : "0px 0px 10px 0px rgba(34,122,68,0.6)"
+      }
     },
     colors: {
       'primary': {

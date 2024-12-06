@@ -33,6 +33,7 @@ export interface ButtonIconProps {
   icon: React.ReactNode;
   onUpload: (url: string) => void
 }
+
 export interface ButtonIconRightProps {
   label: string;
   icon: React.ReactNode;
@@ -50,4 +51,11 @@ export interface CarouselMomentProps {
 export interface buttonOutlineProps{
   label?: string;
   className?: string;
+}
+
+export interface cardEuroTeamProps{
+  avatar?: string | StaticImageData;
+  namaLengkap?: string;
+  namaSamaran?: string;
+  asal?: string;
 }

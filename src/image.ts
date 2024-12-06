@@ -17,6 +17,7 @@ import noDataImg from './assets/no-data.jpg'
 import avatar from './assets/avatar.png'
 import handShake from './assets/hand_shake.gif'
 import heroImg from './assets/hero-img.png'
+import avatarIrham from './assets/irham.jpeg'
 
 
 export{
@@ -38,5 +39,6 @@ export{
     noDataImg,
     avatar,
     handShake,
-    heroImg
+    heroImg,
+    avatarIrham
 }
