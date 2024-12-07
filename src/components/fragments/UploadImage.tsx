@@ -1,8 +1,13 @@
 "use client"
 
 import { UploadButton } from "@/utils/uploadthing"
+import { Toast } from "flowbite-react";
+import { useState } from "react";
+import { HiCheck, HiExclamation } from "react-icons/hi";
 
 export const UploadImage = () => {
+
+    const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
     const handleUploadComplete = async (url: string) => {
         try {
@@ -18,12 +23,12 @@ export const UploadImage = () => {
             });
 
             if (response.ok) {
-                console.log('Image saved to database');
+                setToast({ type: "success", message: "Foto berhasil disimpan silahkan reload halaman website." });
             } else {
-                console.error('Failed to save image');
+                setToast({ type: "error", message: "Gagal menyimpan foto" });
             }
         } catch (error) {
-            console.error('Error:', error);
+            setToast({ type: "error", message: "Terjadi kesalahan saat menyimpan foto." });
         }
     };
 
@@ -45,13 +50,35 @@ export const UploadImage = () => {
                             const uploadedUrl = res[0].url;
                             handleUploadComplete(uploadedUrl); // Simpan URL ke database
                         }
-                        alert("Upload Completed");
+                        setToast({ type: "success", message: "Foto berhasil diupload" });
                     }}
                     onUploadError={(error) => {
-                        alert(`ERROR! ${error.message}`);
+                        setToast({ type: "error", message: "Foto gagal diupload." });
                     }}
                 />
             </div>
+
+            {toast && (
+                <div className="fixed bottom-4 right-4">
+                    <Toast>
+                        <div
+                            className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${toast.type === "success"
+                                ? "bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200"
+                                : "bg-orange-100 text-orange-500 dark:bg-orange-700 dark:text-orange-200"
+                                }`}
+                        >
+                            {toast.type === "success" ? (
+                                <HiCheck className="h-5 w-5" />
+                            ) : (
+                                <HiExclamation className="h-5 w-5" />
+                            )}
+
+                        </div>
+                        <div className="ml-3 text-sm font-normal">{toast.message}</div>
+                        <Toast.Toggle onClick={() => setToast(null)} />
+                    </Toast>
+                </div>
+            )}
         </>
     )
 }
