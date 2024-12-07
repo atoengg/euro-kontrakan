@@ -6,19 +6,11 @@ import iconMomen from './assets/icon-moment.png'
 import galeriTest1 from './assets/galeri-test1.jpg'
 import galeriTest2 from './assets/galeri-test2.jpg'
 import galeriTest3 from './assets/galeri-test3.jpg'
-import lineHorizontal from './assets/LineHorizontal.svg'
-import lineVertikal from './assets/LineVertikal.svg'
-import lineKananKiri from './assets/LineKananKiri.svg'
-import iconCircle from './assets/Circle.svg'
-import lineHorizontalPendek from './assets/LineHorizontalPendek.svg'
-import lineVertikal2 from './assets/LineVertikal2.svg'
-import lineVertikal3 from './assets/LineVertikal3.svg'
 import noDataImg from './assets/no-data.jpg'
 import avatar from './assets/avatar.png'
 import handShake from './assets/hand_shake.gif'
 import heroImg from './assets/hero-img.png'
 import avatarIrham from './assets/irham.jpeg'
-
 
 export{
     euroLogo,
@@ -29,13 +21,6 @@ export{
     galeriTest1,
     galeriTest2,
     galeriTest3,
-    lineHorizontal,
-    lineVertikal,
-    lineKananKiri,
-    iconCircle,
-    lineHorizontalPendek,
-    lineVertikal2,
-    lineVertikal3,
     noDataImg,
     avatar,
     handShake,
