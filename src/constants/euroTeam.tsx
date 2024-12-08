@@ -76,6 +76,6 @@ export const EuroTeam = [
         avatar: avatarIrham,
         namaLengkap: "M Irham Al Karim",
         namaSamaran: "kareem",
-        asal: "gresik",
+        asal: "Gresik",
     },
 ]

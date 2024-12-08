@@ -7,7 +7,7 @@ import { Avatar } from "flowbite-react"
 export const Navbar = () => {
     return (
         <>
-            <header className="bg-transparent top-0 left-0 w-full z-[999] absolute">
+            <header className="bg-transparent top-0 left-0 w-full z-10 absolute">
                 <nav className="container mx-auto py-4 flex justify-between items-center">
                     <div className="flex items-center">
                         <img src={euroLogo.src} alt="logo" className="w-12 h-12 mr-6" />
@@ -28,7 +28,7 @@ export const Navbar = () => {
                             <Avatar img={avatar.src} rounded bordered/>
                             <p className="text-secondary-950 text-[16px] font-poppins">Hello Brader</p>
                         </div>
-                        <ButtonIconRight label="Jelajahi" icon={<BsArrowRight className="ml-2 h-5 w-5"/>}/>
+                        <ButtonIconRight label="Login" icon={<BsArrowRight className="ml-2 h-5 w-5"/>}/>
                     </div>
                 </nav>
             </header>

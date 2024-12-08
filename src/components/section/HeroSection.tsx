@@ -1,9 +1,16 @@
+"use client"
+
 import { handShake, heroImg } from "@/image"
 import { ButtonOutline } from "../elements/button/ButtonOutline"
 import { Buttons } from "../elements/button/Buttons"
+import { useState } from "react";
+import { ModalTermOfService } from "../fragments/ModalTermOfService";
 
 
 export const HeroSection = () => {
+
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <>
             <section id="home" className="min-h-screen bg-gradient-to-b from-primary-200 via-primary-300 to-secondary-950">
@@ -19,7 +26,7 @@ export const HeroSection = () => {
                             <p className="text-sm text-[#1d3e5d] my-4 leading-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa magnam ipsam voluptatum. Dignissimos ea magnam reprehenderit inventore, repellendus fugiat doloribus quasi porro eaque similique numquam? Vel fuga nam voluptatum ratione!</p>
 
                             <div className="flex flex-row gap-4">
-                                <Buttons label="Upload Kenangan" type="button" color="success" />
+                                <Buttons label="Terms of Service" type="button" color="success" onClick={() => setOpenModal(true)} />
                                 <ButtonOutline label="Jelajahi" className="bg-transparent border border-solid rounded-full px-4 py-2 text-white border-green-700 transition-all duration-200 ease-in-out hover:bg-green-800" />
                             </div>
                         </div>
@@ -29,6 +36,8 @@ export const HeroSection = () => {
                     </div>
                 </div>
             </section>
+
+            <ModalTermOfService open={openModal} onClose={() => setOpenModal(false)}/>
         </>
     )
 }
