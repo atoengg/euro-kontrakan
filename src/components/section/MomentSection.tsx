@@ -27,7 +27,7 @@ export const MomentSection = () => {
         <>
             <section className="rounded-t-[4rem] border-t-8 border-secondary-950 bg-white pb-2 relative -mt-4 z-10">
                 <div className="text-center py-14">
-                    <h2 className="font-semibold text-4xl font-poppins">Euro Kontrakan momen</h2>
+                    <h2 className="font-semibold text-4xl font-poppins">Euro Kontrakan Momen</h2>
                 </div>
                 <div className="">
                     <CarouselMoment images={images} />

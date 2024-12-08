@@ -8,7 +8,7 @@ export interface euroLogo {
 export interface ButtonProps {
   className?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>
-  type?: "button" | "reset" | "submit" ;
+  type?: "button" | "reset" | "submit";
   color?: "blue" | "gray" | "dark" | "light" | "success" | "failure" | "warning" | "purple";
   label?: string | React.ReactNode;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
@@ -33,16 +33,34 @@ export interface ButtonIconProps {
   icon: React.ReactNode;
   onUpload: (url: string) => void
 }
+
 export interface ButtonIconRightProps {
   label: string;
   icon: React.ReactNode;
 }
 
-export interface BorderProps{
+export interface BorderProps {
   width: string;
   nama: string;
 }
 
 export interface CarouselMomentProps {
   images: string[];
+}
+
+export interface buttonOutlineProps {
+  label?: string;
+  className?: string;
+}
+
+export interface cardEuroTeamProps {
+  avatar?: string | StaticImageData;
+  namaLengkap?: string;
+  namaSamaran?: string;
+  asal?: string;
+}
+
+export interface modalTermOfServiceProps {
+  open: boolean;
+  onClose: () => void;
 }
