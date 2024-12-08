@@ -37,6 +37,7 @@ export interface ButtonIconProps {
 export interface ButtonIconRightProps {
   label: string;
   icon: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export interface BorderProps {

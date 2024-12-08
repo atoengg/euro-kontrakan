@@ -1,10 +1,17 @@
+"use client"
+
 import { Navbar_item } from "@/constants/navbar"
 import { avatar, euroLogo } from "@/image"
 import { ButtonIconRight } from "../elements/button/ButtonIconRight"
 import { BsArrowRight } from "react-icons/bs"
 import { Avatar } from "flowbite-react"
+import { useState } from "react"
+import { ModalFormLogin } from "./ModalFormLogin"
 
 export const Navbar = () => {
+
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <>
             <header className="bg-transparent top-0 left-0 w-full z-10 absolute">
@@ -25,13 +32,18 @@ export const Navbar = () => {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
-                            <Avatar img={avatar.src} rounded bordered/>
+                            <Avatar img={avatar.src} rounded bordered />
                             <p className="text-secondary-950 text-[16px] font-poppins">Hello Brader</p>
                         </div>
-                        <ButtonIconRight label="Login" icon={<BsArrowRight className="ml-2 h-5 w-5"/>}/>
+                        <ButtonIconRight
+                            label="Login"
+                            icon={<BsArrowRight className="ml-2 h-5 w-5" />}
+                            onClick={() => setOpenModal(true)} />
                     </div>
                 </nav>
             </header>
+
+            <ModalFormLogin open={openModal} onClose={() => setOpenModal(false)}/>
         </>
     )
 }
