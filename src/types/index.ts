@@ -65,3 +65,8 @@ export interface modalTermOfServiceProps {
   open: boolean;
   onClose: () => void;
 }
+
+export interface modalFormLoginProps {
+  open: boolean;
+  onClose: () => void;
+}
