@@ -1,7 +1,7 @@
 "use client"
 
 import { euroLogo } from '@/image';
-import { modalFormLoginProps } from '@/types';
+import { modalProps } from '@/types';
 import { Button, Label, Modal, TextInput, Toast } from 'flowbite-react'
 import { Formik } from 'formik';
 import React, { useEffect, useState } from 'react'
@@ -10,6 +10,7 @@ import { toFormikValidationSchema } from 'zod-formik-adapter';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import { auth } from '@/app/firebase/config';
 import { HiCheck, HiExclamation } from 'react-icons/hi';
+import { useAuth } from '@/context/AuthContext';
 
 
 type LoginFormInputs = TypeOf<typeof loginFormSchema>
@@ -23,9 +24,11 @@ const loginFormSchema = object({
     }),
 });
 
-export const ModalFormLogin = ({ open, onClose }: modalFormLoginProps) => {
+export const ModalFormLogin = ({ open, onClose }: modalProps) => {
 
-    const [loginWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth)
+    const [loading, error] = useSignInWithEmailAndPassword(auth)
+
+    const { login } = useAuth()
 
     const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
@@ -33,7 +36,7 @@ export const ModalFormLogin = ({ open, onClose }: modalFormLoginProps) => {
         if (error) {
             setToast({ type: "error", message: "Login gagal, email dan password yang anda masukan salah" });
         }
-    }, [error]) 
+    }, [error])
     return (
         <>
             <Formik<LoginFormInputs>
@@ -42,13 +45,14 @@ export const ModalFormLogin = ({ open, onClose }: modalFormLoginProps) => {
                     password: "",
                 }}
                 onSubmit={async (values, { resetForm }) => {
-                    const res = await loginWithEmailAndPassword(values.email, values.password);
-                    if (res?.user) {
-                        setToast({ type: "success", message: "Login berhasil" });
+                    try {
+                        await login(values.email, values.password)
+                        setToast({ type: "success", message: "Login berhasil" })
                         resetForm()
                         onClose()
+                    } catch (error) {
+                        setToast({ type: "error", message: "Login gagal, email dan password yang anda masukan tidak valid" })
                     }
-
                 }}
                 validationSchema={toFormikValidationSchema(loginFormSchema)}
             >{
@@ -108,9 +112,9 @@ export const ModalFormLogin = ({ open, onClose }: modalFormLoginProps) => {
                                                     color={"success"}
                                                     type='submit'
                                                     className='flex justify-center w-full'
-                                                    disabled={!isValid || loading}
+                                                    // disabled={!!(!isValid || loading)}
                                                 >
-                                                    {loading ? "loading..." : "Login"}
+                                                    Login
                                                 </Button>
                                             </div>
                                         </div>

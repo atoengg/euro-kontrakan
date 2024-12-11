@@ -61,12 +61,7 @@ export interface cardEuroTeamProps {
   asal?: string;
 }
 
-export interface modalTermOfServiceProps {
-  open: boolean;
-  onClose: () => void;
-}
-
-export interface modalFormLoginProps {
+export interface modalProps {
   open: boolean;
   onClose: () => void;
 }
