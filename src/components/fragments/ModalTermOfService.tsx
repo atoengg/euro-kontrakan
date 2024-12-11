@@ -1,10 +1,10 @@
 "use client"
 
-import { modalTermOfServiceProps } from '@/types'
+import { modalProps} from '@/types'
 import { Button, List, Modal } from 'flowbite-react'
 import React from 'react'
 
-export const ModalTermOfService = ({ open, onClose }: modalTermOfServiceProps) => {
+export const ModalTermOfService = ({ open, onClose }: modalProps) => {
     return (
         <>
             <Modal dismissible show={open} onClose={onClose} className="z-[999]">

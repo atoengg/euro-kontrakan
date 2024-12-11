@@ -4,17 +4,18 @@ import { ExploreSection } from "@/components/section/ExploreSection";
 import { HeroSection } from "@/components/section/HeroSection";
 import { MomentSection } from "@/components/section/MomentSection";
 import { OurMemberSection } from "@/components/section/OurMemberSection";
+import { AuthProvider } from "@/context/AuthContext";
 
 
 export default function Home() {
   return (
     <>
       <Layouts>
-        <HeroSection/>
-        <ExploreSection/>
-        <AboutUsSection/>
-        <MomentSection/>
-        <OurMemberSection/>
+        <HeroSection />
+        <ExploreSection />
+        <AboutUsSection />
+        <MomentSection />
+        <OurMemberSection />
       </Layouts>
     </>
   );

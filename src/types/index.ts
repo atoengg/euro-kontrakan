@@ -37,6 +37,7 @@ export interface ButtonIconProps {
 export interface ButtonIconRightProps {
   label: string;
   icon: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export interface BorderProps {
@@ -60,7 +61,7 @@ export interface cardEuroTeamProps {
   asal?: string;
 }
 
-export interface modalTermOfServiceProps {
+export interface modalProps {
   open: boolean;
   onClose: () => void;
 }

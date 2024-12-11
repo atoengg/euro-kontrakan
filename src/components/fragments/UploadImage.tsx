@@ -1,5 +1,6 @@
 "use client"
 
+import { useAuth } from "@/context/AuthContext";
 import { UploadButton } from "@/utils/uploadthing"
 import { Toast } from "flowbite-react";
 import { useState } from "react";
@@ -9,7 +10,16 @@ export const UploadImage = () => {
 
     const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
+    const { user } = useAuth()
+
+
     const handleUploadComplete = async (url: string) => {
+
+        if (!user) {
+            setToast({ type: "error", message: "Harap login terlebih dahulu untuk upload gambar" })
+            return
+        }
+
         try {
             const response = await fetch('/api/upload-image', {
                 method: 'POST',
@@ -18,7 +28,7 @@ export const UploadImage = () => {
                 },
                 body: JSON.stringify({
                     url: url, // URL gambar dari UploadThing
-                    uploadedBy: "userId" // Ganti dengan ID user sesungguhnya
+                    uploadedBy: user.uid // Ganti dengan ID user sesungguhnya
                 }),
             });
 
@@ -35,27 +45,32 @@ export const UploadImage = () => {
     return (
         <>
             <div className="flex flex-col justify-center items-center">
-                <UploadButton
-                    endpoint={'imageUploader'}
-                    appearance={{
-                        button: {
-                            background: '#4dab5b',
-                            borderRadius: '18px',
-                            fontSize: '14px',
-                            fontWeight: '600'
-                        }
-                    }}
-                    onClientUploadComplete={(res) => {
-                        if (res && res.length > 0) {
-                            const uploadedUrl = res[0].url;
-                            handleUploadComplete(uploadedUrl); // Simpan URL ke database
-                        }
-                        setToast({ type: "success", message: "Foto berhasil diupload" });
-                    }}
-                    onUploadError={(error) => {
-                        setToast({ type: "error", message: "Foto gagal diupload." });
-                    }}
-                />
+                {user ? (
+                    <UploadButton
+                        endpoint={'imageUploader'}
+                        appearance={{
+                            button: {
+                                background: '#4dab5b',
+                                borderRadius: '18px',
+                                fontSize: '14px',
+                                fontWeight: '600'
+                            }
+                        }}
+                        onClientUploadComplete={(res) => {
+                            if (res && res.length > 0) {
+                                const uploadedUrl = res[0].url;
+                                handleUploadComplete(uploadedUrl); // Simpan URL ke database
+                            }
+                            setToast({ type: "success", message: "Foto berhasil diupload" });
+                        }}
+                        onUploadError={(error) => {
+                            setToast({ type: "error", message: "Foto gagal diupload." });
+                        }}
+                    />
+                ) : (
+                    <p className="text-red-500 text-sm">Login terlebih dahulu untuk upload gambar</p>
+                )}
+
             </div>
 
             {toast && (
