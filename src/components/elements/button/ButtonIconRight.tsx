@@ -3,11 +3,11 @@
 import { ButtonIconRightProps } from "@/types"
 import { Button } from "flowbite-react"
 
-export const ButtonIconRight = ({label, icon, onClick} : ButtonIconRightProps) => {
+export const ButtonIconRight = ({label, icon, onClick, color} : ButtonIconRightProps) => {
     return (
         <>
             <div className="">
-                <Button className="font-semibold" color={'success'} onClick={onClick}>
+                <Button className="flex items-center font-semibold" color={color} onClick={onClick}>
                     {label}
                     {icon}
                 </Button>                

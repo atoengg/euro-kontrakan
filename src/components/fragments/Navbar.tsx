@@ -3,7 +3,7 @@
 import { Navbar_item } from "@/constants/navbar"
 import { avatar, euroLogo } from "@/image"
 import { ButtonIconRight } from "../elements/button/ButtonIconRight"
-import { BsArrowRight } from "react-icons/bs"
+import { BsArrowRight, BsBoxArrowInRight } from "react-icons/bs"
 import { Avatar } from "flowbite-react"
 import { useState } from "react"
 import { ModalFormLogin } from "./ModalFormLogin"
@@ -44,13 +44,15 @@ export const Navbar = () => {
                                 </div>
                                 <ButtonIconRight
                                     label="Logout"
-                                    icon={<BsArrowRight className="ml-2 h-5 w-5" />}
+                                    color="failure"
+                                    icon={<BsBoxArrowInRight className="ml-2 h-5 w-5" />}
                                     onClick={() => setOpenModalLogout(true)} />
                             </>
                         ) : (
 
                             <ButtonIconRight
                                 label="Login"
+                                color="success"
                                 icon={<BsArrowRight className="ml-2 h-5 w-5" />}
                                 onClick={() => setOpenModal(true)} />
                         )}
