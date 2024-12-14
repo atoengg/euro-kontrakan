@@ -23,7 +23,7 @@ const config: Config = {
         "90%": "90%",
       },
       fontFamily: {
-        poppins : ["Poppins","sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -31,7 +31,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
-        "shadowCard" : "0px 0px 10px 0px rgba(34,122,68,0.6)"
+        "shadowCard": "0px 0px 10px 0px rgba(34,122,68,0.6)"
       }
     },
     colors: {
@@ -47,12 +47,12 @@ const config: Config = {
         800: '#28532f',
         900: '#234429',
       },
-      'secondary' :{
+      'secondary': {
         700: '#1d496f',
         900: '#1d3e5d',
         950: '#0f1f30'
       },
-      'white' : {
+      'white': {
         50: '#fffbfb'
       }
     }
