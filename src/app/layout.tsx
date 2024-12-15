@@ -4,6 +4,7 @@ import "./globals.css";
 import { Layouts } from "@/components/layouts";
 import { Footer } from "@/components/fragments/Footer";
 import "@uploadthing/react/styles.css";
+import "aos/dist/aos.css";
 
 
 
