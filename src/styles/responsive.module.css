@@ -1,0 +1,39 @@
+.nav__item {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav__item {
+    display: none;
+  }
+
+  .nav__btn {
+    display: none;
+  }
+
+  .wrapper__hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__img {
+    width: 90%;
+    margin: 18px 0;
+  }
+
+  .wrapper__img img {
+    height: 200px;
+  }
+
+  .header__about{
+    font-size: 32px;
+    line-height: 2rem;
+  }
+}

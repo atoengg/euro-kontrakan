@@ -7,7 +7,7 @@ export const OurMemberSection = () => {
         <>
             <section className="py-10">
                 <div className="text-center">
-                    <h2 className="font-semibold text-4xl font-poppins text-white mb-6">Manusia Euro Kontrakan</h2>
+                    <h2 className="font-semibold text-3xl lg:text-4xl font-poppins text-white mb-6">Manusia Euro Kontrakan</h2>
                 </div>
 
                 <Marquee autoFill pauseOnClick>

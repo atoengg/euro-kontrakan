@@ -1,6 +1,7 @@
 import { cardDataAboutUs } from "@/constants/cardAboutUs"
 import { aboutUsImg } from "@/image"
 import { CardAboutUs } from "../fragments/CardAboutUs"
+import styles from '../../styles/responsive.module.css'
 
 export const AboutUsSection = () => {
     return (
@@ -13,10 +14,10 @@ export const AboutUsSection = () => {
                         className="w-full h-full object-cover rounded-b-[4rem]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-transparent to-secondary-950 rounded-b-[4rem]">
-                        <p className="text-center mt-40 text-white font-semibold font-poppins leading-[3rem] text-5xl ">Bertumbuh Bersama <br /> Euro Kontrakan</p>
+                        <p className={`${styles.header__about} text-center mt-40 text-white font-semibold font-poppins leading-[3rem] text-5xl`}>Bertumbuh Bersama <br /> Euro Kontrakan</p>
                     </div>
                 </div>
-                <div className="absolute top-[24rem] left-44">
+                <div className="absolute top-[20rem] lg:top-[24rem] left-12 lg:left-44">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
                         {cardDataAboutUs.map((card) => (
                             <CardAboutUs key={card.id} background={card.background} icon={card.icon.src} title={card.title} description={card.description} />
