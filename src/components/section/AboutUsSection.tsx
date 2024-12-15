@@ -1,7 +1,7 @@
 import { cardDataAboutUs } from "@/constants/cardAboutUs"
 import { aboutUsImg } from "@/image"
-import { CardAboutUs } from "../fragments/CardAboutUs"
 import styles from '../../styles/responsive.module.css'
+import { CardAboutUs } from "../fragments/card/CardAboutUs"
 
 export const AboutUsSection = () => {
     return (

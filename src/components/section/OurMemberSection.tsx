@@ -1,6 +1,6 @@
 import { EuroTeam } from "@/constants/euroTeam"
 import Marquee from "react-fast-marquee"
-import { CardEuroTeam } from "../fragments/CardEuroTeam"
+import { CardEuroTeam } from "../fragments/card/CardEuroTeam"
 
 export const OurMemberSection = () => {
     return (

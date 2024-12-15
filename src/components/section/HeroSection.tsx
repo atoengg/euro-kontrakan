@@ -2,11 +2,11 @@
 
 import { galeriTest1, galeriTest2, galeriTest3, handShake } from "@/image"
 import { ButtonOutline } from "../elements/button/ButtonOutline"
-import { Buttons } from "../elements/button/Buttons"
 import { useEffect, useState } from "react";
-import { ModalTermOfService } from "../fragments/ModalTermOfService";
+import { ModalTermOfService } from "../fragments/modal/ModalTermOfService";
 import styles from '../../styles/responsive.module.css'
 import AOS from 'aos'
+import { Buttons } from "../elements/button/Buttons";
 
 export const HeroSection = () => {
 

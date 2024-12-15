@@ -6,9 +6,9 @@ import { ButtonIconRight } from "../elements/button/ButtonIconRight"
 import { BsArrowRight, BsBoxArrowInRight, BsFilterRight, BsX } from "react-icons/bs"
 import { Avatar } from "flowbite-react"
 import { useState } from "react"
-import { ModalFormLogin } from "./ModalFormLogin"
+import { ModalFormLogin } from "./modal/ModalFormLogin"
 import { useAuth } from "@/context/AuthContext"
-import { ModalLogout } from "./ModalLogout"
+import { ModalLogout } from "./modal/ModalLogout"
 import styles from '../../styles/responsive.module.css'
 
 export const Navbar = () => {
