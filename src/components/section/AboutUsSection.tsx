@@ -1,9 +1,21 @@
+"use client"
+
 import { cardDataAboutUs } from "@/constants/cardAboutUs"
 import { aboutUsImg } from "@/image"
 import styles from '../../styles/responsive.module.css'
 import { CardAboutUs } from "../fragments/card/CardAboutUs"
+import AOS from 'aos'
+import { useEffect } from "react"
+
 
 export const AboutUsSection = () => {
+
+    useEffect(() => {
+        AOS.init({
+            once: true,
+        });
+    })
+
     return (
         <>
             <section className="relative bg-secondary-950 h-[120vh]">
@@ -13,12 +25,21 @@ export const AboutUsSection = () => {
                         alt="Img-aboutUs"
                         className="w-full h-full object-cover rounded-b-[4rem]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-transparent to-secondary-950 rounded-b-[4rem]">
-                        <p className={`${styles.header__about} text-center mt-40 text-white font-semibold font-poppins leading-[3rem] text-5xl`}>Bertumbuh Bersama <br /> Euro Kontrakan</p>
+                    <div
+                        className="absolute inset-0 bg-gradient-to-t from-transparent to-secondary-950 rounded-b-[4rem]">
+                        <p
+                            data-aos="fade-up"
+                            data-aos-duration="1200"
+                            data-aos-delay="2200"
+                            className={`${styles.header__about} text-center mt-40 text-white font-semibold font-poppins leading-[3rem] text-5xl`}>Bertumbuh Bersama <br /> Euro Kontrakan</p>
                     </div>
                 </div>
                 <div className="absolute top-[20rem] lg:top-[24rem] left-12 lg:left-44">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
+                    <div
+                        data-aos="fade-up"
+                        data-aos-duration="1800"
+                        data-aos-delay="2800"
+                        className="grid grid-cols-1 md:grid-cols-3 gap-14">
                         {cardDataAboutUs.map((card) => (
                             <CardAboutUs key={card.id} background={card.background} icon={card.icon.src} title={card.title} description={card.description} />
                         ))}

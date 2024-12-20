@@ -1,6 +1,6 @@
 "use client"
 
-import { galeriTest1, galeriTest2, galeriTest3, handShake } from "@/image"
+import { handShake, imgHero1, imgHero2, imgHero3 } from "@/image"
 import { ButtonOutline } from "../elements/button/ButtonOutline"
 import { useEffect, useState } from "react";
 import { ModalTermOfService } from "../fragments/modal/ModalTermOfService";
@@ -55,7 +55,7 @@ export const HeroSection = () => {
                                 data-aos-delay="2800"
                                 className={`${styles.wrapper__img} lg:relative`}>
                                 <img
-                                    src={galeriTest1.src}
+                                    src={imgHero1.src}
                                     alt=""
                                     className="h-[350px] object-cover w-full rounded-3xl lg:absolute lg:top-8"
                                 />
@@ -67,7 +67,7 @@ export const HeroSection = () => {
                                 data-aos-delay="2800"
                                 className={`${styles.wrapper__img} lg:relative`}>
                                 <img
-                                    src={galeriTest2.src}
+                                    src={imgHero2.src}
                                     alt=""
                                     className="h-[350px] object-cover w-full rounded-3xl"
                                 />
@@ -75,11 +75,11 @@ export const HeroSection = () => {
 
                             <div
                                 data-aos="fade-up"
-                                data-aos-duration="2500"
+                                data-aos-duration="2000"
                                 data-aos-delay="2800"
                                 className={`${styles.wrapper__img} lg:relative`}>
                                 <img
-                                    src={galeriTest3.src}
+                                    src={imgHero3.src}
                                     alt=""
                                     className="h-[350px] object-cover w-full rounded-3xl lg:absolute lg:top-8"
                                 />
