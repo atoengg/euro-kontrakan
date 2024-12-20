@@ -4,14 +4,12 @@ import { euroLogo } from '@/image';
 import { modalProps } from '@/types';
 import { Button, Label, Modal, TextInput, Toast } from 'flowbite-react'
 import { Formik } from 'formik';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { object, string, TypeOf } from 'zod';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
-import { auth } from '@/app/firebase/config';
-import { HiCheck, HiExclamation } from 'react-icons/hi';
 import { useAuth } from '@/context/AuthContext';
-
+import { HiCheck, HiExclamation } from 'react-icons/hi';
+import ClipLoader from "react-spinners/ClipLoader";
 
 type LoginFormInputs = TypeOf<typeof loginFormSchema>
 
@@ -25,106 +23,103 @@ const loginFormSchema = object({
 });
 
 export const ModalFormLogin = ({ open, onClose }: modalProps) => {
+    const { login } = useAuth() 
+    const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null)
+    const [isLoading, setIsLoading] = useState(false) 
 
-    const [loading, error] = useSignInWithEmailAndPassword(auth)
-
-    const { login } = useAuth()
-
-    const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
-
-    useEffect(() => {
-        if (error) {
-            setToast({ type: "error", message: "Login gagal, email dan password yang anda masukan salah" });
+    const handleLogin = async (values: LoginFormInputs, resetForm: () => void) => {
+        setIsLoading(true) 
+        try {
+            await login(values.email, values.password)
+            setToast({ type: "success", message: "Login berhasil" })
+            resetForm()
+            onClose()
+        } catch (error) {
+            setToast({ type: "error", message: "Login gagal, email dan password yang anda masukan salah" })
+        } finally {
+            setIsLoading(false) 
         }
-    }, [error])
+    }
+
     return (
         <>
             <Formik<LoginFormInputs>
-                initialValues={{
-                    email: "",
-                    password: "",
-                }}
-                onSubmit={async (values, { resetForm }) => {
-                    try {
-                        await login(values.email, values.password)
-                        setToast({ type: "success", message: "Login berhasil" })
+                initialValues={{ email: "", password: "" }}
+                onSubmit={(values, { resetForm }) => handleLogin(values, resetForm)}
+                validationSchema={toFormikValidationSchema(loginFormSchema)}
+            >
+                {(formik) => {
+                    const { errors, touched, isValid, resetForm } = formik
+
+                    const handleCloseModal = () => {
                         resetForm()
                         onClose()
-                    } catch (error) {
-                        setToast({ type: "error", message: "Login gagal, email dan password yang anda masukan tidak valid" })
                     }
-                }}
-                validationSchema={toFormikValidationSchema(loginFormSchema)}
-            >{
-                    (formik) => {
-                        const { errors, touched, isValid, resetForm } = formik;
 
-                        const handleCloseModal = () => {
-                            resetForm()
-                            onClose()
-                        }
-
-                        return (
-                            <Modal show={open} size="md" onClose={handleCloseModal} className='z-[9999]' popup>
-                                <Modal.Header />
-                                <Modal.Body>
-                                    <form action="" onSubmit={formik.handleSubmit}>
-                                        <div className="space-y-6">
-                                            <img src={euroLogo.src} alt="logo" className="w-12 h-12 mr-6" />
-                                            <h3 className="text-xl font-medium text-gray-900 dark:text-white">Log in di platfom euro kontrakan</h3>
-                                            <div>
-                                                <div className="mb-2 block">
-                                                    <Label htmlFor="email" value="Email" />
-                                                </div>
-                                                <TextInput
-                                                    id="email"
-                                                    placeholder="example@gmail.com"
-                                                    {...formik.getFieldProps("email")}
-                                                    required
-                                                    className={`rounded-lg ${errors.email ? "border border-red-500" : "border border-primary-500"}`}
-                                                />
-                                                {touched.email && errors.email && (
-                                                    <div className="mt-2 text-sm text-red-500">{errors.email}</div>
-                                                )}
+                    return (
+                        <Modal show={open} size="md" onClose={handleCloseModal} className='z-[9999]' popup>
+                            <Modal.Header />
+                            <Modal.Body>
+                                <form action="" onSubmit={formik.handleSubmit}>
+                                    <div className="space-y-6">
+                                        <img src={euroLogo.src} alt="logo" className="w-12 h-12 mr-6" />
+                                        <h3 className="text-xl font-medium text-gray-900 dark:text-white">Log in di platform euro kontrakan</h3>
+                                        <div>
+                                            <div className="mb-2 block">
+                                                <Label htmlFor="email" value="Email" />
                                             </div>
-                                            <div>
-                                                <div className="mb-2 block">
-                                                    <Label htmlFor="password" value="Password" />
-                                                </div>
-                                                <TextInput
-                                                    id="password"
-                                                    type="password"
-                                                    {...formik.getFieldProps("password")}
-                                                    className={`rounded-lg ${errors.password ? "border border-red-500" : "border border-primary-500"}`}
-                                                    required
-                                                />
-                                                {touched.password && errors.password && (
-                                                    <div className="mt-2 text-sm text-red-500">{errors.password}</div>
-                                                )}
-                                            </div>
-                                            {error && (
-                                                <div className="mt-2 text-sm text-red-500">
-                                                    <p>Maaf email dan password salah</p>
-                                                </div>
+                                            <TextInput
+                                                id="email"
+                                                placeholder="example@gmail.com"
+                                                {...formik.getFieldProps("email")}
+                                                required
+                                                className={`rounded-lg ${errors.email ? "border border-red-500" : "border border-primary-500"}`}
+                                            />
+                                            {touched.email && errors.email && (
+                                                <div className="mt-2 text-sm text-red-500">{errors.email}</div>
                                             )}
-                                            <div>
-                                                <Button
-                                                    color={"success"}
-                                                    type='submit'
-                                                    className='flex justify-center w-full'
-                                                    // disabled={!!(!isValid || loading)}
-                                                >
-                                                    Login
-                                                </Button>
-                                            </div>
                                         </div>
-                                    </form>
-                                </Modal.Body>
-                            </Modal>
-                        )
-                    }
-                }
+                                        <div>
+                                            <div className="mb-2 block">
+                                                <Label htmlFor="password" value="Password" />
+                                            </div>
+                                            <TextInput
+                                                id="password"
+                                                type="password"
+                                                {...formik.getFieldProps("password")}
+                                                className={`rounded-lg ${errors.password ? "border border-red-500" : "border border-primary-500"}`}
+                                                required
+                                            />
+                                            {touched.password && errors.password && (
+                                                <div className="mt-2 text-sm text-red-500">{errors.password}</div>
+                                            )}
+                                        </div>
+                                        <div>
+                                            <Button
+                                                color={"success"}
+                                                type="submit"
+                                                className="flex justify-center w-full"
+                                                disabled={isLoading || !isValid}
+                                            >
+                                                {isLoading ?
+                                                    <ClipLoader
+                                                        color="#fffbfb"
+                                                        size={25}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                    /> :
+                                                    "Login"
+                                                }
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </Modal.Body>
+                        </Modal>
+                    )
+                }}
             </Formik>
+
             {toast && (
                 <div className="fixed bottom-4 right-4 z-[999]">
                     <Toast>
@@ -139,7 +134,6 @@ export const ModalFormLogin = ({ open, onClose }: modalProps) => {
                             ) : (
                                 <HiExclamation className="h-5 w-5" />
                             )}
-
                         </div>
                         <div className="ml-3 text-sm font-normal">{toast.message}</div>
                         <Toast.Toggle onClick={() => setToast(null)} />

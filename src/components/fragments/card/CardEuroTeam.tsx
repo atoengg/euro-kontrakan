@@ -12,9 +12,9 @@ export const CardEuroTeam = ({ avatar, namaLengkap, namaSamaran, asal }: cardEur
                         <Image
                             src={avatar}
                             alt={namaLengkap || "Avatar"}
-                            width={56}
-                            height={56}
-                            className="w-14 h-14 rounded-full object-cover grayscale"
+                            width={46}
+                            height={46}
+                            className="w-16 h-16 rounded-full object-cover grayscale"
                         />
                     )}
                     <div className="flex justify-between flex-col gap-3">

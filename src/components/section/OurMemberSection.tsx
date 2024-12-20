@@ -39,7 +39,7 @@ export const OurMemberSection = () => {
                 </Marquee>
 
                 <Marquee autoFill pauseOnClick direction="right">
-                    {EuroTeam?.slice(5, 8).map((item, index) => (
+                    {EuroTeam?.slice(4, 8).map((item, index) => (
                         <div
                             data-aos="fade-up"
                             data-aos-duration="2000"
@@ -51,7 +51,7 @@ export const OurMemberSection = () => {
                 </Marquee>
 
                 <Marquee autoFill pauseOnClick>
-                    {EuroTeam?.slice(9, 11).map((item, index) => (
+                    {EuroTeam?.slice(8, 11).map((item, index) => (
                         <div
                             data-aos="fade-up"
                             data-aos-duration="2500"
