@@ -25,7 +25,7 @@ export const Navbar = () => {
 
     return (
         <>
-            <header className="bg-transparent top-0 left-0 w-full z-10 absolute">
+            <header className="bg-transparent top-0 left-0 w-full z-[10] absolute">
                 <nav className="container mx-auto py-4 flex justify-between items-center">
                     <div className="flex items-center">
                         <img src={euroLogo.src} alt="logo" className="w-12 h-12 mr-6" />
@@ -68,7 +68,7 @@ export const Navbar = () => {
                         <BsFilterRight size={35} />
                     </div>
 
-                    <div className={openNav ? "fixed left-0 top-0 w-[45%] sm:hidden h-screen background-modal p-8 ease-in duration-500" : "fixed left-[-100%] top-0 p-10 ease-in duration-500"}>
+                    <div className={openNav ? "fixed left-0 top-0 w-[60%] sm:hidden h-screen background-modal p-8 ease-in duration-500 z-[9999]" : "fixed left-[-100%] top-0 p-10 ease-in duration-500"}>
                         <div className="flex w-full items-center justify-end">
                             <div className="cursor-pointer" onClick={handleNav}>
                                 <BsX size={35} />

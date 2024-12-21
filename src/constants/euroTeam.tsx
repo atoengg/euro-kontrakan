@@ -1,4 +1,4 @@
-import { avatar, avatarAgung, avatarAzis, avatarBagas, avatarDaus, avatarDhiki, avatarDimas, avatarIrham, avatarNadlif, avatarReza, avatarRivki, avatarRiyo } from "@/image";
+import { avatarAgung, avatarAzis, avatarBagas, avatarDaus, avatarDhiki, avatarDimas, avatarIrham, avatarNadlif, avatarReza, avatarRivki, avatarRiyo } from "@/image";
 
 export const EuroTeam = [
     {
@@ -26,7 +26,7 @@ export const EuroTeam = [
         id: 4,
         avatar: avatarBagas,
         namaLengkap: "Bagas Rama Setiawan",
-        namaSamaran: "Rama",
+        namaSamaran: "Bgst",
         asal: "Jombang",
     },
     {
