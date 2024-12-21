@@ -18,7 +18,7 @@ export const AboutUsSection = () => {
 
     return (
         <>
-            <section className="relative bg-secondary-950 h-[120vh]">
+            <section className="relative bg-secondary-950 h-[150vh] lg:h-[120vh]">
                 <div className="relative w-full h-64 md:h-[450px]">
                     <img
                         src={aboutUsImg.src}
@@ -34,7 +34,7 @@ export const AboutUsSection = () => {
                             className={`${styles.header__about} text-center mt-40 text-white font-semibold font-poppins leading-[3rem] text-5xl`}>Bertumbuh Bersama <br /> Euro Kontrakan</p>
                     </div>
                 </div>
-                <div className="absolute top-[20rem] lg:top-[24rem] left-12 lg:left-44">
+                <div className="absolute top-[20rem] lg:top-[24rem] left-[38px] lg:left-44">
                     <div
                         data-aos="fade-up"
                         data-aos-duration="1800"

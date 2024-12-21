@@ -23,7 +23,7 @@ export const OurMemberSection = () => {
                         data-aos="fade-up"
                         data-aos-duration="1200"
                         data-aos-delay="2200"
-                        className="font-semibold text-3xl lg:text-4xl font-poppins text-white mb-6">Manusia Euro Kontrakan</h2>
+                        className="font-semibold text-[26px] lg:text-4xl font-poppins text-white mb-6">Manusia Euro Kontrakan</h2>
                 </div>
 
                 <Marquee autoFill pauseOnClick>

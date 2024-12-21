@@ -5,8 +5,10 @@ import Slider from "react-slick";
 import Image from "next/image";
 import { noDataImg } from "@/image";
 import { CarouselMomentProps } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsX } from "react-icons/bs";
+import AOS from 'aos'
+
 
 export const CarouselMoment = ({ images }: CarouselMomentProps) => {
 
@@ -18,10 +20,12 @@ export const CarouselMoment = ({ images }: CarouselMomentProps) => {
         setOpenImg(true)
     }
 
-    const handleCloseImg = () => {
-        setOpenImg(false)
-        setSelectedImg(null)
-    }
+    useEffect(() => {
+        AOS.init({
+            once: true,
+        });
+    })
+
 
     const settings = {
         centerMode: true,
@@ -57,7 +61,10 @@ export const CarouselMoment = ({ images }: CarouselMomentProps) => {
 
     return (
         <>
-            <div className="">
+            <div className=""
+                data-aos="fade-up"
+                data-aos-duration="1800"
+                data-aos-delay="2200">
                 {images.length > 0 ? (
                     <Slider {...settings}>
                         {images.map((imageUrl, index) => (
@@ -87,10 +94,13 @@ export const CarouselMoment = ({ images }: CarouselMomentProps) => {
                 <div className="fixed top-0 left-0 w-full h-full z-[9999] bg-black bg-opacity-50 flex items-center justify-center">
                     <img
                         src={selectedImg}
-                        alt="euro-moment"
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[90%]  -translate-y-1/2 block lg:max-w-xl max-h-[95%] object-contain rounded-xl" />
-
-                    <button className="absolute top-2 right-2 text-white active:text-[#030712] hover:bg-[#9ca3af] rounded-md" onClick={() => handleCloseImg()}>
+                        alt="Euro-moment"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block lg:max-w-3xl lg:max-h-[90%] object-contain rounded-xl"
+                    />
+                    <button
+                        className="absolute top-2 right-2 text-white active:text-[#030712] hover:bg-[#9ca3af] rounded-md"
+                        onClick={() => setSelectedImg(null)}
+                    >
                         <BsX size={40} />
                     </button>
                 </div>

@@ -6,7 +6,6 @@ import iconMomen from './assets/icon-moment.png'
 import noDataImg from './assets/no-data.jpg'
 import avatar from './assets/avatar.png'
 import handShake from './assets/hand_shake.gif'
-import heroImg from './assets/hero-img.png'
 import avatarIrham from './assets/irham.jpeg'
 import avatarDimas from './assets/dimas.jpeg'
 import avatarDhiki from './assets/dhiki.jpeg'
@@ -31,7 +30,6 @@ export {
     noDataImg,
     avatar,
     handShake,
-    heroImg,
     avatarIrham,
     avatarAgung,
     avatarBagas,

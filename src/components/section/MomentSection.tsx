@@ -33,21 +33,15 @@ export const MomentSection = () => {
 
     return (
         <>
-            <section className="rounded-t-[4rem] border-t-8 border-secondary-950 bg-white pb-2 relative -mt-4 z-10">
+            <section className="rounded-t-[4rem] border-t-8 border-secondary-950 bg-white pb-2 relative -mt-4 z-[4]">
                 <div className="text-center py-14">
                     <h2
                         data-aos="fade-up"
                         data-aos-duration="1200"
                         data-aos-delay="2200"
-                        className="font-semibold text-3xl lg:text-4xl font-poppins">Euro Kontrakan Momen</h2>
+                        className="font-semibold text-[26px] lg:text-4xl font-poppins">Euro Kontrakan Momen</h2>
                 </div>
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="1800"
-                    data-aos-delay="2800"
-                    className="">
-                    <CarouselMoment images={images} />
-                </div>
+                <CarouselMoment images={images} />
                 <div
                     data-aos="fade-up"
                     data-aos-duration="2000"
