@@ -18,7 +18,7 @@ export const AboutUsSection = () => {
 
     return (
         <>
-            <section className="relative bg-secondary-950 h-[150vh] lg:h-[120vh]">
+            <section className="relative bg-secondary-950 h-[150vh] lg:h-[120vh]" id="tentang-kami">
                 <div className="relative w-full h-64 md:h-[450px]">
                     <img
                         src={aboutUsImg.src}

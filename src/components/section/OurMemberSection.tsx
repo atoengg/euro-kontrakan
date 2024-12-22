@@ -17,7 +17,7 @@ export const OurMemberSection = () => {
 
     return (
         <>
-            <section className="py-10">
+            <section className="py-10" id="galeri">
                 <div className="text-center">
                     <h2
                         data-aos="fade-up"

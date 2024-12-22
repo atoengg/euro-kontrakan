@@ -20,6 +20,7 @@ import avatarDaus from './assets/daus.jpg'
 import imgHero1 from './assets/hero1.jpg'
 import imgHero2 from './assets/hero2.jpg'
 import imgHero3 from './assets/hero3.jpg'
+import notFound from './assets/not-found.png'
 
 export {
     euroLogo,
@@ -43,5 +44,6 @@ export {
     avatarDaus,
     imgHero1,
     imgHero2,
-    imgHero3
+    imgHero3,
+    notFound
 }

@@ -33,7 +33,7 @@ export const MomentSection = () => {
 
     return (
         <>
-            <section className="rounded-t-[4rem] border-t-8 border-secondary-950 bg-white pb-2 relative -mt-4 z-[4]">
+            <section className="rounded-t-[4rem] border-t-8 border-secondary-950 bg-white pb-2 relative -mt-4 z-[4]" id="galeri">
                 <div className="text-center py-14">
                     <h2
                         data-aos="fade-up"

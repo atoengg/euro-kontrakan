@@ -10,6 +10,7 @@ import { ModalFormLogin } from "./modal/ModalFormLogin"
 import { useAuth } from "@/context/AuthContext"
 import { ModalLogout } from "./modal/ModalLogout"
 import styles from '../../styles/responsive.module.css'
+import Link from "next/link"
 
 export const Navbar = () => {
 
@@ -23,6 +24,13 @@ export const Navbar = () => {
         setOpenNav(!openNav)
     }
 
+    const handleScroll = (id: string) => {
+        const element = document.getElementById(id)
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" })
+        }
+    }
+
     return (
         <>
             <header className="bg-transparent top-0 left-0 w-full z-[10] absolute">
@@ -34,7 +42,9 @@ export const Navbar = () => {
                                 {
                                     Navbar_item?.map((item, index) => (
                                         <li key={index}>
-                                            <a href={item.href} className="font-normal text-[16px] font-poppins text-secondary-950 transition-all duration-200 ease-in-out hover:underline">{item.label}</a>
+                                            <Link href={`#${item.href}`} scroll={false} onClick={() => handleScroll(item.href)}>
+                                                <p className="font-normal text-[16px] font-poppins text-secondary-950 transition-all duration-200 ease-in-out hover:underline">{item.label}</p>
+                                            </Link>
                                         </li>
                                     ))
                                 }
