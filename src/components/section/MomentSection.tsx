@@ -10,6 +10,12 @@ export const MomentSection = () => {
 
     const [images, setImages] = useState<string[]>([])
 
+    const onUploadComplete = (uploadedImageUrl: string) => {
+        // You can update the state here based on the uploaded image URL
+        console.log('Uploaded image URL:', uploadedImageUrl);
+        setImages((prevImages) => [...prevImages, uploadedImageUrl]);
+    };
+
     useEffect(() => {
         const fetchImages = async () => {
             try {
@@ -47,7 +53,7 @@ export const MomentSection = () => {
                     data-aos-duration="2000"
                     data-aos-delay="2800"
                     className="flex flex-row justify-center gap-4 my-8">
-                    <UploadImage />
+                    <UploadImage onUploadComplete={onUploadComplete}/>
                 </div>
             </section>
         </>
