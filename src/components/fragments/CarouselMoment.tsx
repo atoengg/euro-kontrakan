@@ -12,10 +12,11 @@ import AOS from 'aos'
 
 export const CarouselMoment = ({ images }: CarouselMomentProps) => {
 
-    const [selectedImg, setSelectedImg] = useState(null)
+    const [selectedImg, setSelectedImg] = useState<string | null>(null);
+
     const [openImg, setOpenImg] = useState(false)
 
-    const handleImgClick = (imgUrl) => {
+    const handleImgClick = (imgUrl: string) => {
         setSelectedImg(imgUrl)
         setOpenImg(true)
     }
