@@ -1,9 +1,7 @@
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 
-const f = createUploadthing({
-  apiKey: process.env.UPLOADTHING_TOKEN,
-});
+const f = createUploadthing();
 
 const auth = (req: Request) => ({ id: "userId" }); // Fake auth function
 
