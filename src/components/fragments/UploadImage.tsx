@@ -35,7 +35,6 @@ export const UploadImage = ({ onUploadComplete }: UploadImageProps) => {
 
             if (response.ok) {
                 setToast({ type: "success", message: "Foto berhasil disimpan silahkan reload halaman website." });
-                onUploadComplete(url); // Callback saat selesai berhasil upload
             } else {
                 setToast({ type: "error", message: "Gagal menyimpan foto ke database" });
             }
