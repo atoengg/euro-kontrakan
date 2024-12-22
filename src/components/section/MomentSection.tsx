@@ -1,21 +1,53 @@
-import { BsArrowBarUp, BsArrowRight } from "react-icons/bs"
-import { ButtonIconRight } from "../elements/button/ButtonIconRight"
-import { ButtonUpload } from "../elements/button/ButtonUpload"
+"use client"
+
 import { CarouselMoment } from "../fragments/CarouselMoment"
+import { useEffect, useState } from "react"
+import { UploadImage } from "../fragments/UploadImage"
+import AOS from 'aos'
+
 
 export const MomentSection = () => {
+
+    const [images, setImages] = useState<string[]>([])
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const response = await fetch('api/images');
+                const data = await response.json();
+                const imageUrls = data.map((img: any) => img.url);
+                setImages(imageUrls);
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+        };
+
+        fetchImages();
+    }, []);
+
+    useEffect(() => {
+        AOS.init({
+            once: true,
+        });
+    })
+
     return (
         <>
-            <section className="rounded-t-[4rem] border-t-8 border-secondary-950 bg-white pb-2 relative -mt-4 z-10">
+            <section className="rounded-t-[4rem] border-t-8 border-secondary-950 bg-white pb-2 relative -mt-4 z-[4]" id="galeri">
                 <div className="text-center py-14">
-                    <h2 className="font-semibold text-4xl font-poppins">Euro Kontrakan momen</h2>
+                    <h2
+                        data-aos="fade-up"
+                        data-aos-duration="1200"
+                        data-aos-delay="2200"
+                        className="font-semibold text-[26px] lg:text-4xl font-poppins">Euro Kontrakan Momen</h2>
                 </div>
-                <div className="">
-                    <CarouselMoment />
-                </div>
-                <div className="flex flex-row justify-center gap-4 my-8">
-                    <ButtonUpload label="Upload" icon={<BsArrowBarUp className="mr-2 w-5 h-5"/>}/>
-                    <ButtonIconRight label="Lihat semua" icon={<BsArrowRight className="ml-2 w-5 h-5"/>}/>
+                <CarouselMoment images={images} />
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    data-aos-delay="2800"
+                    className="flex flex-row justify-center gap-4 my-8">
+                    <UploadImage />
                 </div>
             </section>
         </>

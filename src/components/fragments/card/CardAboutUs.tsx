@@ -1,6 +1,6 @@
 import { Card } from "flowbite-react"
-import { Buttons } from "../elements/button/Buttons"
 import { CardAboutUsProps } from "@/types"
+import { Buttons } from "@/components/elements/button/Buttons"
 
 export const CardAboutUs = ({background, icon, title, description} : CardAboutUsProps) => {
     return (
@@ -11,10 +11,10 @@ export const CardAboutUs = ({background, icon, title, description} : CardAboutUs
                         <img src={icon} alt="icon-about" className='w-10 h-w-10' />
                     </div>
                 </div>
-                <h5 className="text-xl font-bold tracking-tight text-white mt-2">
+                <h5 className="text-[19.416px] lg:text-xl font-bold tracking-tight text-white mt-2">
                     {title}
                 </h5>
-                <p className="font-normal text-sm text-white">
+                <p className="font-normal text-[12px] lg:text-sm text-white">
                     {description}
                 </p>
 

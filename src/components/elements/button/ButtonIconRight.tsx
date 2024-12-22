@@ -1,13 +1,13 @@
 "use client"
 
-import { ButtonIconProps } from "@/types"
+import { ButtonIconRightProps } from "@/types"
 import { Button } from "flowbite-react"
 
-export const ButtonIconRight = ({label, icon} : ButtonIconProps) => {
+export const ButtonIconRight = ({label, icon, onClick, color} : ButtonIconRightProps) => {
     return (
         <>
-            <div className="flex flex-wrap gap-2">
-                <Button className="font-semibold bg-primary-500 duration-200 transition-all ease-in-out hover:bg-primary-600" color={"success"}>
+            <div className="">
+                <Button className="flex items-center font-semibold" color={color} onClick={onClick}>
                     {label}
                     {icon}
                 </Button>                

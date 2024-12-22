@@ -1,0 +1,81 @@
+import { avatarAgung, avatarAzis, avatarBagas, avatarDaus, avatarDhiki, avatarDimas, avatarIrham, avatarNadlif, avatarReza, avatarRivki, avatarRiyo } from "@/image";
+
+export const EuroTeam = [
+    {
+        id: 1,
+        avatar: avatarDimas,
+        namaLengkap: "Dimas Bagus Allan A.",
+        namaSamaran: "Wong Gede",
+        asal: "Lamongan",
+    },
+    {
+        id: 2,
+        avatar: avatarDhiki,
+        namaLengkap: "Ahmad Dhiki A.",
+        namaSamaran: "Shodiqin",
+        asal: "Lamongan",
+    },
+    {
+        id: 3,
+        avatar: avatarReza,
+        namaLengkap: "Reza Arimatul Anam",
+        namaSamaran: "Katol",
+        asal: "Ponorogo",
+    },
+    {
+        id: 4,
+        avatar: avatarBagas,
+        namaLengkap: "Bagas Rama Setiawan",
+        namaSamaran: "Bgst",
+        asal: "Jombang",
+    },
+    {
+        id: 5,
+        avatar: avatarAzis,
+        namaLengkap: "Azis Al Rozak",
+        namaSamaran: "Cipung",
+        asal: "Sidoarjo",
+    },
+    {
+        id: 6,
+        avatar: avatarRiyo,
+        namaLengkap: "M Riyo Ubaidillah",
+        namaSamaran: "Ubek",
+        asal: "Mojokerto",
+    },
+    {
+        id: 7,
+        avatar: avatarNadlif,
+        namaLengkap: "Urukhul Nadhif Zaxi",
+        namaSamaran: "goss",
+        asal: "Lamongan",
+    },
+    {
+        id: 8,
+        avatar: avatarDaus,
+        namaLengkap: "Achmad Firdaus",
+        namaSamaran: "mbah daus",
+        asal: "Lamongan",
+    },
+    {
+        id: 9,
+        avatar: avatarAgung,
+        namaLengkap: "Agung Jefrianto",
+        namaSamaran: "mbah Agung",
+        asal: "Lamongan",
+    },
+    {
+        id: 10,
+        avatar: avatarRivki,
+        namaLengkap: "M. Rivki Maulana",
+        namaSamaran: "ucup",
+        asal: "Purwokerto",
+    },
+    {
+        id: 11,
+        avatar: avatarIrham,
+        namaLengkap: "M Irham Al Karim",
+        namaSamaran: "kareem",
+        asal: "Gresik",
+    },
+]

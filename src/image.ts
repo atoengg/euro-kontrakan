@@ -3,32 +3,47 @@ import aboutUsImg from './assets/banner-aboutus.jpg'
 import iconMember from './assets/icon-member.png'
 import iconSolid from './assets/icon-solid.png'
 import iconMomen from './assets/icon-moment.png'
-import galeriTest1 from './assets/galeri-test1.jpg'
-import galeriTest2 from './assets/galeri-test2.jpg'
-import galeriTest3 from './assets/galeri-test3.jpg'
-import lineHorizontal from './assets/LineHorizontal.svg'
-import lineVertikal from './assets/LineVertikal.svg'
-import lineKananKiri from './assets/LineKananKiri.svg'
-import iconCircle from './assets/Circle.svg'
-import lineHorizontalPendek from './assets/LineHorizontalPendek.svg'
-import lineVertikal2 from './assets/LineVertikal2.svg'
-import lineVertikal3 from './assets/LineVertikal3.svg'
+import noDataImg from './assets/no-data.jpg'
+import avatar from './assets/avatar.png'
+import handShake from './assets/hand_shake.gif'
+import avatarIrham from './assets/irham.jpeg'
+import avatarDimas from './assets/dimas.jpeg'
+import avatarDhiki from './assets/dhiki.jpeg'
+import avatarReza from './assets/reza.jpeg'
+import avatarBagas from './assets/bagas.jpeg'
+import avatarAzis from './assets/azis.jpeg'
+import avatarRiyo from './assets/riyo.jpeg'
+import avatarRivki from './assets/rivki.jpeg'
+import avatarAgung from './assets/agung.jpeg'
+import avatarNadlif from './assets/nadlif.jpg'
+import avatarDaus from './assets/daus.jpg'
+import imgHero1 from './assets/hero1.jpg'
+import imgHero2 from './assets/hero2.jpg'
+import imgHero3 from './assets/hero3.jpg'
+import notFound from './assets/not-found.png'
 
-
-export{
+export {
     euroLogo,
     aboutUsImg,
     iconMember,
     iconSolid,
     iconMomen,
-    galeriTest1,
-    galeriTest2,
-    galeriTest3,
-    lineHorizontal,
-    lineVertikal,
-    lineKananKiri,
-    iconCircle,
-    lineHorizontalPendek,
-    lineVertikal2,
-    lineVertikal3
+    noDataImg,
+    avatar,
+    handShake,
+    avatarIrham,
+    avatarAgung,
+    avatarBagas,
+    avatarDhiki,
+    avatarDimas,
+    avatarReza,
+    avatarRivki,
+    avatarRiyo,
+    avatarAzis,
+    avatarNadlif,
+    avatarDaus,
+    imgHero1,
+    imgHero2,
+    imgHero3,
+    notFound
 }

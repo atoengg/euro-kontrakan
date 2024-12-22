@@ -7,6 +7,15 @@ export interface euroLogo {
 
 export interface ButtonProps {
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  type?: "button" | "reset" | "submit";
+  color?: "blue" | "gray" | "dark" | "light" | "success" | "failure" | "warning" | "purple";
+  label?: string | React.ReactNode;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+}
+
+export interface ButtonSpinnerProps {
+  className?: string;
   color?: "blue" | "gray" | "dark" | "light" | "success" | "failure" | "warning" | "purple";
   label?: string | React.ReactNode;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
@@ -22,9 +31,38 @@ export interface CardAboutUsProps {
 export interface ButtonIconProps {
   label: string;
   icon: React.ReactNode;
+  onUpload: (url: string) => void
 }
 
-export interface BorderProps{
+export interface ButtonIconRightProps {
+  label: string;
+  icon: React.ReactNode;
+  color?: "blue" | "gray" | "dark" | "light" | "success" | "failure" | "warning" | "purple";
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export interface BorderProps {
   width: string;
   nama: string;
+}
+
+export interface CarouselMomentProps {
+  images: string[];
+}
+
+export interface buttonOutlineProps {
+  label?: string;
+  className?: string;
+}
+
+export interface cardEuroTeamProps {
+  avatar?: string | StaticImageData;
+  namaLengkap?: string;
+  namaSamaran?: string;
+  asal?: string;
+}
+
+export interface modalProps {
+  open: boolean;
+  onClose: () => void;
 }
