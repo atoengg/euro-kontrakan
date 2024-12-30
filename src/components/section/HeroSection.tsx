@@ -7,6 +7,7 @@ import { ModalTermOfService } from "../fragments/modal/ModalTermOfService";
 import styles from '../../styles/responsive.module.css'
 import AOS from 'aos'
 import { Buttons } from "../elements/button/Buttons";
+import ShuffleText from "../elements/shuffleText/ShuffleText";
 
 export const HeroSection = () => {
 
@@ -29,7 +30,9 @@ export const HeroSection = () => {
                                     <img src={handShake.src} alt="" className="w-8 h-8" />
                                 </span>,
                             </p>
-                            <h1 className="text-2xl lg:text-[36.4px] font-bold text-secondary-950">Euro Kontrakan.</h1>
+                            <h1 className="text-2xl lg:text-[36.4px] font-bold text-secondary-950">
+                                <ShuffleText />
+                            </h1>
                             <p
                                 data-aos="fade-up"
                                 data-aos-duration="1200"
