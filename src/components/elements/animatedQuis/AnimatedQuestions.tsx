@@ -19,7 +19,7 @@ export const AnimatedQuestions = ({ isHidden }: { isHidden: boolean }) => {
                 {questions.map((question, index) => (
                     <p
                         key={index}
-                        className={`absolute left-2 sm:left-12 text-gray-400 text-sm sm:text-base font-normal text-neutral-500 w-full transition-transform duration-700 ${index === activeIndex ? 'translate-y-3 opacity-100' : '-translate-y-full opacity-0'
+                        className={`absolute left-4 text-gray-400 text-sm sm:text-base font-normal text-neutral-500 w-full transition-transform duration-700 ${index === activeIndex ? 'translate-y-3 opacity-100' : '-translate-y-full opacity-0'
                             }`}>
                         {question}
                     </p>

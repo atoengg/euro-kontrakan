@@ -113,7 +113,7 @@ export const AiSection = () => {
 
     return (
         <>
-            <div className="container mx-auto flex flex-col gap-6 py-20 min-h-screen">
+            <div className="container mx-auto flex flex-col gap-6 mb-32 lg:mb-36 py-20 max-h-fit">
                 <div className="flex flex-col items-center justify-center">
                     <h2
                         data-aos="fade-up"
@@ -164,7 +164,7 @@ export const AiSection = () => {
                                 onBlur={handleBlur}
                                 value={userMessage}
                                 onChange={(e) => setUserMessage(e.target.value)}
-                                className="w-full relative text-sm sm:text-base z-50 border-none text-white bg-transparent h-full rounded-full focus:outline-none focus:ring-0 pl-4 sm:pl-10 pr-20"
+                                className="w-full relative text-sm z-50 border-none text-white bg-transparent h-full rounded-full focus:outline-none focus:ring-0 pl-4 pr-20"
                             />
                             <button
                                 type="submit"
