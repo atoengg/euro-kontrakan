@@ -1,5 +1,6 @@
 import { Layouts } from "@/components/layouts";
 import { AboutUsSection } from "@/components/section/AboutUsSection";
+import { AiSection } from "@/components/section/AiSection";
 import { ExploreSection } from "@/components/section/ExploreSection";
 import { HeroSection } from "@/components/section/HeroSection";
 import { MomentSection } from "@/components/section/MomentSection";
@@ -23,6 +24,7 @@ export default function Home() {
         <ExploreSection />
         <AboutUsSection />
         <MomentSection />
+        <AiSection/>
         <OurMemberSection />
       </Layouts>
     </>
