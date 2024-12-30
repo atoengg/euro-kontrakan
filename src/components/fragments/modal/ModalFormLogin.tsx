@@ -73,7 +73,7 @@ export const ModalFormLogin = ({ open, onClose }: modalProps) => {
                                                 placeholder="example@gmail.com"
                                                 {...formik.getFieldProps("email")}
                                                 required
-                                                className={`rounded-lg ${errors.email ? "border border-red-500" : "border border-primary-500"}`}
+                                                className={`rounded-lg focus:outline-none ${errors.email ? "border border-red-500" : "border border-primary-500"}`}
                                             />
                                             {touched.email && errors.email && (
                                                 <div className="mt-2 text-sm text-red-500">{errors.email}</div>
@@ -87,7 +87,7 @@ export const ModalFormLogin = ({ open, onClose }: modalProps) => {
                                                 id="password"
                                                 type="password"
                                                 {...formik.getFieldProps("password")}
-                                                className={`rounded-lg ${errors.password ? "border border-red-500" : "border border-primary-500"}`}
+                                                className={`rounded-lg focus:outline-none ${errors.password ? "border border-red-500" : "border border-primary-500"}`}
                                                 required
                                             />
                                             {touched.password && errors.password && (
