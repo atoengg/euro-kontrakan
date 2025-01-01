@@ -115,7 +115,7 @@ export const Navbar = () => {
                             <ButtonIconRight
                                 label="Login"
                                 color="success"
-                                icon={<BsArrowRight className="ml-2 h-5 w-5" />}
+                                icon={<BsPersonFill className="ml-2 h-5 w-5" />}
                                 onClick={() => setOpenModal(true)} />
                         )}
 
