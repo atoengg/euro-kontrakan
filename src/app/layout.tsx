@@ -18,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <meta name="google-site-verification" content="iUU6oyFLNvK5L_tOsYv-kRLwOzcNJVa3N9A4UtjTHPI" />
+      </head>
       <body className={poppins.className}>
         <Layouts>
           {children}
