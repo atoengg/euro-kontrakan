@@ -113,16 +113,9 @@ export const AiSection = () => {
 
     return (
         <>
-            <div className="container mx-auto flex flex-col gap-6 mb-32 lg:mb-36 py-20 max-h-fit">
+            <div className="flex flex-col gap-6 mt-10 max-h-fit">
                 <div className="flex flex-col items-center justify-center">
-                    <h2
-                        data-aos="fade-up"
-                        data-aos-duration="1200"
-                        data-aos-delay="1000"
-                        className="font-semibold text-white text-center text-[26px] lg:text-4xl font-poppins mb-4"
-                    >
-                        Coba Tanya Euro AI
-                    </h2>
+                    
                     <div className="w-full">
                         {messages.map((msg, index) => (
                             <div
@@ -152,9 +145,6 @@ export const AiSection = () => {
                             </div>
                         ))}
                         <form
-                            data-aos="fade-up"
-                            data-aos-duration="1200"
-                            data-aos-delay="2000"
                             onSubmit={handleSendMessage}
                             className="w-full relative max-w-xl mx-auto bg-secondary-900 h-12 rounded-full overflow-hidden shadow transition duration-200"
                         >

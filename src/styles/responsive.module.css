@@ -36,4 +36,23 @@
     font-size: 32px;
     line-height: 2rem;
   }
+  
+  /* .start{
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+  } */
+
+  .start{
+    margin: 12px 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .heading__text{
+    font-size: 38px;
+  }
 }
