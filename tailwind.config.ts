@@ -24,6 +24,8 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        foundersGrotesk: ['var(--font-foundersGrotesk)'],
+        neueMontreal: ['var(--font-neueMontreal)'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

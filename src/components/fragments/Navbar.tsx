@@ -3,7 +3,7 @@
 import { Navbar_item } from "@/constants/navbar"
 import { avatar, euroLogo } from "@/image"
 import { ButtonIconRight } from "../elements/button/ButtonIconRight"
-import { BsArrowRight, BsBoxArrowInRight, BsFilterRight, BsPersonFill, BsX } from "react-icons/bs"
+import { BsBoxArrowInRight, BsFilterRight, BsPersonFill, BsX } from "react-icons/bs"
 import { Avatar } from "flowbite-react"
 import { useState } from "react"
 import { ModalFormLogin } from "./modal/ModalFormLogin"
@@ -43,7 +43,7 @@ export const Navbar = () => {
                                     Navbar_item?.map((item, index) => (
                                         <li key={index}>
                                             <Link href={`#${item.href}`} scroll={false} onClick={() => handleScroll(item.href)}>
-                                                <p className="font-normal text-[16px] font-poppins text-secondary-950 transition-all duration-200 ease-in-out hover:underline">{item.label}</p>
+                                                <p className="font-light text-[16px] font-neueMontreal text-secondary-950 transition-all duration-200 ease-in-out hover:underline">{item.label}</p>
                                             </Link>
                                         </li>
                                     ))
@@ -115,7 +115,7 @@ export const Navbar = () => {
                             <ButtonIconRight
                                 label="Login"
                                 color="success"
-                                icon={<BsArrowRight className="ml-2 h-5 w-5" />}
+                                icon={<BsPersonFill className="ml-2 h-5 w-5" />}
                                 onClick={() => setOpenModal(true)} />
                         )}
 

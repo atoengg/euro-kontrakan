@@ -1,13 +1,13 @@
 "use client"
 
 import { handShake, imgHero1, imgHero2, imgHero3 } from "@/image"
-import { ButtonOutline } from "../elements/button/ButtonOutline"
 import { useEffect, useState } from "react";
 import { ModalTermOfService } from "../fragments/modal/ModalTermOfService";
 import styles from '../../styles/responsive.module.css'
 import AOS from 'aos'
 import { Buttons } from "../elements/button/Buttons";
 import ShuffleText from "../elements/shuffleText/ShuffleText";
+import { ButtonStart } from "../elements/button/ButtonStart";
 
 export const HeroSection = () => {
 
@@ -25,30 +25,21 @@ export const HeroSection = () => {
                 <div className="container mx-auto">
                     <div className={`${styles.wrapper__hero} w-full flex justify-between pt-24 lg:pt-32 flex-row items-center`}>
                         <div className={` ${styles.hero} w-5/12 flex flex-col`}>
-                            <p className="text-secondary-950 font-bold text-xl lg:text-[22.652px] flex items-center">Welcome to
+                            <h1 className="text-secondary-950 font-foundersGrotesk -mb-4 tracking-tight font-bold text-3xl lg:text-4xl flex items-center">Welcome to
                                 <span>
                                     <img src={handShake.src} alt="" className="w-8 h-8" />
                                 </span>,
-                            </p>
-                            <h1 className="text-2xl lg:text-[36.4px] font-bold text-secondary-950">
+                            </h1>
+                            <h1 className="text-5xl font-foundersGrotesk leading-none tracking-tight lg:text-7xl font-bold text-secondary-950">
                                 <ShuffleText />
                             </h1>
                             <p
                                 data-aos="fade-up"
                                 data-aos-duration="1200"
                                 data-aos-delay="2200"
-                                className="text-[12px] lg:text-sm text-[#1d3e5d] font-semibold my-3">
+                                className="text-[12px] lg:text-sm text-[#1d3e5d] font-poppins font-semibold my-3">
                                 Cari momen kenanganmu bersama Euro kontrakan
                             </p>
-
-                            <div
-                                data-aos="fade-up"
-                                data-aos-duration="1200"
-                                data-aos-delay="2200"
-                                className="flex flex-row gap-4 mt-2">
-                                <Buttons label="Terms of Service" type="button" color="success" onClick={() => setOpenModal(true)} />
-                                <ButtonOutline label="Jelajahi" className="bg-transparent border border-solid rounded-full px-4 py-2 text-white border-green-700 transition-all duration-200 ease-in-out hover:bg-green-800" />
-                            </div>
                         </div>
                         <div
                             className={`${styles.hero__img} grid grid-cols-1 lg:grid-cols-3 gap-3 w-6/12`}>
@@ -88,7 +79,14 @@ export const HeroSection = () => {
                                 />
                             </div>
                         </div>
+                    </div>
 
+                    <div className={`${styles.start} mt-16 flex justify-between items-center py-4 font-neuemontreal text-white`}>
+                        <p
+                            className="text-sm lg:text-md font-light tracking-tight leading-none">Ini semua tentang kami</p>
+                        <Buttons
+                            label="Terms of Service" className="font-neueMontreal uppercase text-[11px] lg:text-sm" type="button" color="success" onClick={() => setOpenModal(true)} />
+                        <ButtonStart/>
                     </div>
                 </div>
             </section>
