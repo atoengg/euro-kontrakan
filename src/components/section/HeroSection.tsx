@@ -82,8 +82,10 @@ export const HeroSection = () => {
                     </div>
 
                     <div className={`${styles.start} mt-16 flex justify-between items-center py-4 font-neuemontreal text-white`}>
-                        <p className="text-sm lg:text-md font-light tracking-tight leading-none">Ini semua tentang kami</p>
-                        <Buttons label="Terms of Service" className="font-neueMontreal uppercase text-[11px] lg:text-sm" type="button" color="success" onClick={() => setOpenModal(true)} />
+                        <p
+                            className="text-sm lg:text-md font-light tracking-tight leading-none">Ini semua tentang kami</p>
+                        <Buttons
+                            label="Terms of Service" className="font-neueMontreal uppercase text-[11px] lg:text-sm" type="button" color="success" onClick={() => setOpenModal(true)} />
                         <ButtonStart/>
                     </div>
                 </div>

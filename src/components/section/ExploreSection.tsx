@@ -80,12 +80,12 @@ export const ExploreSection = () => {
                 </motion.h1>
             </div>
 
-            <div className="w-full flex gap-5 pt-10 mt-20 border-t border-secondary-900">
-                <div className="w-1/2">
-                    <h1 className="text-5xl text-white">Coba tanya Euro AI:</h1>
+        <div className={`w-full flex ${styles.wrapper__ai} gap-5 pt-10 mt-20 border-t border-secondary-900`}>
+                <div className={`${styles.content__ai} w-1/2`}>
+                    <h1 className={`${styles.heading__ai} text-5xl text-white`}>Coba tanya Euro AI:</h1>
                     <AiSection />
                 </div>
-                <div className="w-1/2 h-[70vh]">
+                <div className={`${styles.content__ai} w-1/2 h-[70vh]`}>
                     <Image src={imgChatbot} alt="img-bot" className="rounded-3xl" />
                 </div>
             </div>
