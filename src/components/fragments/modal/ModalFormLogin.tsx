@@ -1,6 +1,6 @@
 "use client"
 
-import { euroLogo } from '@/image';
+import { euroLogo, iconGoogle } from '@/image';
 import { modalProps } from '@/types';
 import { Button, Label, Modal, TextInput, Toast } from 'flowbite-react'
 import { Formik } from 'formik';
@@ -10,6 +10,7 @@ import { toFormikValidationSchema } from 'zod-formik-adapter';
 import { useAuth } from '@/context/AuthContext';
 import { HiCheck, HiExclamation } from 'react-icons/hi';
 import ClipLoader from "react-spinners/ClipLoader";
+import Image from 'next/image';
 
 type LoginFormInputs = TypeOf<typeof loginFormSchema>
 
@@ -23,12 +24,13 @@ const loginFormSchema = object({
 });
 
 export const ModalFormLogin = ({ open, onClose }: modalProps) => {
-    const { login } = useAuth() 
+    const { login, loginWithGoogle } = useAuth()
     const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null)
-    const [isLoading, setIsLoading] = useState(false) 
+    const [isLoading, setIsLoading] = useState(false)
+    const [isLoadingWithGoogle, setIsLoadingWithGoogle] = useState(false)
 
     const handleLogin = async (values: LoginFormInputs, resetForm: () => void) => {
-        setIsLoading(true) 
+        setIsLoading(true)
         try {
             await login(values.email, values.password)
             setToast({ type: "success", message: "Login berhasil" })
@@ -37,9 +39,23 @@ export const ModalFormLogin = ({ open, onClose }: modalProps) => {
         } catch (error) {
             setToast({ type: "error", message: "Login gagal, email dan password yang anda masukan salah" })
         } finally {
-            setIsLoading(false) 
+            setIsLoading(false)
         }
     }
+
+    // Handle login with google
+    const handleGoogleLogin = async () => {
+        setIsLoadingWithGoogle(true);
+        try {
+            await loginWithGoogle();
+            setToast({ type: "success", message: "Login dengan Google berhasil" });
+            onClose();
+        } catch (error) {
+            setToast({ type: "error", message: "Login dengan Google gagal" });
+        } finally {
+            setIsLoadingWithGoogle(false);
+        }
+    };
 
     return (
         <>
@@ -114,6 +130,26 @@ export const ModalFormLogin = ({ open, onClose }: modalProps) => {
                                         </div>
                                     </div>
                                 </form>
+
+                                <p className='text-center text-sm text-gray-600 my-4'>atau</p>
+
+                                <button type='submit' className="bg-transparent w-full flex justify-center items-center gap-1 px-4 py-2 rounded-lg border border-primary-500" onClick={handleGoogleLogin}>
+                                    {
+                                        isLoadingWithGoogle ? (
+                                            <ClipLoader
+                                                color="#000"
+                                                size={25}
+                                                aria-label="Loading Spinner"
+                                                data-testid="loader"
+                                            />
+                                        ) : (
+                                            <>
+                                                <Image src={iconGoogle} alt='icon-google' />
+                                                <p className='text-sm font-semibold text-secondary-950'>Google</p>
+                                            </>
+                                        )
+                                    }
+                                </button>
                             </Modal.Body>
                         </Modal>
                     )
