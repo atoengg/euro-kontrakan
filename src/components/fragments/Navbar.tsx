@@ -1,7 +1,7 @@
 "use client"
 
 import { Navbar_item } from "@/constants/navbar"
-import { avatar, euroLogo } from "@/image"
+import { euroLogo } from "@/image"
 import { ButtonIconRight } from "../elements/button/ButtonIconRight"
 import { BsBoxArrowInRight, BsFilterRight, BsPersonFill, BsX } from "react-icons/bs"
 import { useState } from "react"
