@@ -4,7 +4,6 @@ import { Navbar_item } from "@/constants/navbar"
 import { avatar, euroLogo } from "@/image"
 import { ButtonIconRight } from "../elements/button/ButtonIconRight"
 import { BsBoxArrowInRight, BsFilterRight, BsPersonFill, BsX } from "react-icons/bs"
-import { Avatar } from "flowbite-react"
 import { useState } from "react"
 import { ModalFormLogin } from "./modal/ModalFormLogin"
 import { useAuth } from "@/context/AuthContext"
@@ -55,8 +54,8 @@ export const Navbar = () => {
                         {user ? (
                             <>
                                 <div className="flex items-center gap-2">
-                                    <Avatar img={avatar.src} rounded bordered />
-                                    <p className="text-secondary-950 text-[16px] font-poppins">Hello Brader</p>
+                                    <img src={avatar.src} alt="img-profile" className="rounded-full w-10 h-10" />
+                                    <p className="text-secondary-950 text-[16px] font-poppins">{`Hello ${user.displayName?.split(" ")[0] || 'brader'}`}</p>
                                 </div>
                                 <ButtonIconRight
                                     label="Logout"
@@ -101,8 +100,8 @@ export const Navbar = () => {
                             <>
                                 <div className={`flex flex-col gap-4`}>
                                     <div className="flex items-center gap-2">
-                                        <Avatar img={avatar.src} rounded bordered />
-                                        <p className="text-secondary-950 text-[16px] font-poppins">Hello Brader</p>
+                                        <img src={avatar.src} alt="img-profile" className="rounded-full w-10 h-10" />
+                                        <p className="text-secondary-950 text-[16px] font-poppins">{`Hello ${user.displayName?.split(" ")[0] || 'brader'}`}</p>
                                     </div>
                                     <ButtonIconRight
                                         label="Logout"

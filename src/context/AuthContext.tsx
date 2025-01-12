@@ -1,14 +1,13 @@
-// context/AuthContext.tsx
-
 "use client"
 
 import { createContext, useContext, useEffect, useState } from "react"
-import { onAuthStateChanged, User, signInWithEmailAndPassword, signOut } from "firebase/auth"
+import { onAuthStateChanged, User, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth"
 import { auth } from "@/app/firebase/config"
 
 type AuthContextType = {
     user: User | null
     login: (email: string, password: string) => Promise<void>
+    loginWithGoogle: () => Promise<User>
     logout: () => Promise<void>
 }
 
@@ -33,12 +32,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
     }
 
+    const loginWithGoogle = async () => {
+        const provider = new GoogleAuthProvider()
+        try {
+           const result = await signInWithPopup(auth, provider)
+           const user = result.user
+           return user
+        } catch (error) {
+            console.error("Google Sign-In failed", error)
+            throw error
+        }
+    }
+
     const logout = async () => {
         await signOut(auth)
     }
 
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider value={{ user, login, loginWithGoogle, logout }}>
             {children}
         </AuthContext.Provider>
     )
