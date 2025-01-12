@@ -10,6 +10,7 @@ import { useAuth } from "@/context/AuthContext"
 import { ModalLogout } from "./modal/ModalLogout"
 import styles from '../../styles/responsive.module.css'
 import Link from "next/link"
+import Image from "next/image"
 
 export const Navbar = () => {
 
@@ -54,7 +55,7 @@ export const Navbar = () => {
                         {user ? (
                             <>
                                 <div className="flex items-center gap-2">
-                                    <img src={avatar.src} alt="img-profile" className="rounded-full w-10 h-10" />
+                                    <Image width={30} height={30} src={user.photoURL || '/avatar.png'} alt="img-profile" className="rounded-full w-10 h-10" />
                                     <p className="text-secondary-950 text-[16px] font-poppins">{`Hello ${user.displayName?.split(" ")[0] || 'brader'}`}</p>
                                 </div>
                                 <ButtonIconRight
@@ -100,7 +101,7 @@ export const Navbar = () => {
                             <>
                                 <div className={`flex flex-col gap-4`}>
                                     <div className="flex items-center gap-2">
-                                        <img src={avatar.src} alt="img-profile" className="rounded-full w-10 h-10" />
+                                        <Image width={30} height={30} src={user.photoURL || '/avatar.png'} alt="img-profile" className="rounded-full w-10 h-10" />
                                         <p className="text-secondary-950 text-[16px] font-poppins">{`Hello ${user.displayName?.split(" ")[0] || 'brader'}`}</p>
                                     </div>
                                     <ButtonIconRight
