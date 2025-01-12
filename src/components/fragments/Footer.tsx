@@ -17,7 +17,7 @@ export const Footer = () => {
                                 <BsGeoAltFill className="w-6 h-6" />
                                 <a
                                     href="https://maps.app.goo.gl/NnP28c6M4MaTVugX8"
-                                    className="text-[12px] font-[300] duration-200 transition-all ease-in-out hover:text-primary-500"
+                                    className="text-[12px] font-light font-neueMontreal duration-200 transition-all ease-in-out hover:text-primary-500"
                                 >
                                     Graha Kamal, Bindung, Kec. Kamal, Kabupaten Bangkalan, Jawa Timur 69162
                                 </a>
@@ -26,7 +26,7 @@ export const Footer = () => {
                         <div className="grid row-gap-8 grid-cols-2 gap-5 md:grid-cols-3 lg:col-span-4">
                             <div className="">
                                 <h2 className="font-semibold text-lg">Didukung oleh</h2>
-                                <div className="flex flex-col mt-4">
+                                <div className="flex flex-col mt-4 font-neueMontreal font-light">
                                     <a href="#" className="mb-2 text-[12px] duration-200 transition-all ease-in-out hover:text-primary-500">
                                         Pak Tua
                                     </a>
@@ -46,7 +46,7 @@ export const Footer = () => {
                             </div>
                             <div className="">
                                 <h2 className="font-semibold text-lg">Partner Kami</h2>
-                                <div className="flex flex-col mt-4">
+                                <div className="flex flex-col mt-4 font-neueMontreal font-light">
                                     <a href="#" className="mb-2 text-[12px] duration-200 transition-all ease-in-out hover:text-primary-500">
                                         Kos HC
                                     </a>
@@ -61,10 +61,9 @@ export const Footer = () => {
 
                             <div className="">
                                 <h2 className="font-semibold text-lg">Kritik dan Saran</h2>
-                                <p className="text-[12px] mt-3">
+                                <p className="text-[12px] mt-3 font-neueMontreal font-light">
                                     Menerima segala kritik, saran, dan bacod-an anda!
                                 </p>
-
                                 <div className="">
                                     <FormInputFooter/>
                                 </div>

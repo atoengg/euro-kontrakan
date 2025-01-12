@@ -22,6 +22,8 @@ import imgHero2 from './assets/hero2.jpg'
 import imgHero3 from './assets/hero3.jpg'
 import notFound from './assets/not-found.png'
 import botIcon from './assets/iconBot.png'
+import imgChatbot from './assets/Chatbot.png'
+import iconGoogle from './assets/Google.svg'
 
 export {
     euroLogo,
@@ -47,5 +49,7 @@ export {
     imgHero2,
     imgHero3,
     notFound,
-    botIcon
+    botIcon,
+    imgChatbot,
+    iconGoogle
 }

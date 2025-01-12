@@ -5,9 +5,8 @@ import Slider from "react-slick";
 import Image from "next/image";
 import { noDataImg } from "@/image";
 import { CarouselMomentProps } from "@/types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BsX } from "react-icons/bs";
-import AOS from 'aos'
 
 
 export const CarouselMoment = ({ images }: CarouselMomentProps) => {
@@ -20,12 +19,6 @@ export const CarouselMoment = ({ images }: CarouselMomentProps) => {
         setSelectedImg(imgUrl)
         setOpenImg(true)
     }
-
-    useEffect(() => {
-        AOS.init({
-            once: true,
-        });
-    })
 
 
     const settings = {
@@ -62,10 +55,7 @@ export const CarouselMoment = ({ images }: CarouselMomentProps) => {
 
     return (
         <>
-            <div className=""
-                data-aos="fade-up"
-                data-aos-duration="1800"
-                data-aos-delay="2200">
+            <div className="">
                 {images.length > 0 ? (
                     <Slider {...settings}>
                         {images.map((imageUrl, index) => (

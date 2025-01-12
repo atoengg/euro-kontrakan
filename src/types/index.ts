@@ -37,6 +37,7 @@ export interface ButtonIconProps {
 export interface ButtonIconRightProps {
   label: string;
   icon: React.ReactNode;
+  className?: string;
   color?: "blue" | "gray" | "dark" | "light" | "success" | "failure" | "warning" | "purple";
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }

@@ -14,7 +14,7 @@ export const CardAboutUs = ({background, icon, title, description} : CardAboutUs
                 <h5 className="text-[19.416px] lg:text-xl font-bold tracking-tight text-white mt-2">
                     {title}
                 </h5>
-                <p className="font-normal text-[12px] lg:text-sm text-white">
+                <p className="font-light font-neueMontreal text-[12px] lg:text-sm text-white">
                     {description}
                 </p>
 
