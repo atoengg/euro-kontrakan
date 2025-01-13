@@ -51,7 +51,7 @@ export const Navbar = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className={`${styles.nav__btn} flex items-center gap-4`}>
+                    <div className={`${styles.nav__btn}`}>
                         {user ? (
                             <>
                                 <div className="flex items-center gap-2">
@@ -78,7 +78,7 @@ export const Navbar = () => {
                         <BsFilterRight size={35} />
                     </div>
 
-                    <div className={openNav ? "fixed left-0 top-0 w-[60%] sm:hidden h-screen background-modal p-8 ease-in duration-500 z-[9999]" : "fixed left-[-100%] top-0 p-10 ease-in duration-500"}>
+                    <div className={openNav ? "fixed left-0 top-0 w-[60%] sm:hidden h-screen background-modal p-8 ease-in-out duration-500 z-[9999]" : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"}>
                         <div className="flex w-full items-center justify-end">
                             <div className="cursor-pointer" onClick={handleNav}>
                                 <BsX size={35} />
@@ -118,8 +118,6 @@ export const Navbar = () => {
                                 icon={<BsPersonFill className="ml-2 h-5 w-5" />}
                                 onClick={() => setOpenModal(true)} />
                         )}
-
-
                     </div>
                 </nav>
             </header>
